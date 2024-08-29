@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-namespace AngryBird.classes;
+namespace AngryBird.Classes;
 
 [GlobalClass]
 public partial class ImageButton : TextureButton

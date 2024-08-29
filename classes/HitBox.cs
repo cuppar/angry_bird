@@ -1,6 +1,6 @@
 using Godot;
 
-namespace AngryBird.classes;
+namespace AngryBird.Classes;
 
 [GlobalClass]
 public partial class HitBox : Area2D
