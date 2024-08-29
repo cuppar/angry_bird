@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://5x8lsj1h44tg"]
+
+[ext_resource type="Script" path="res://autoloads/SoundManager.cs" id="1_2w3gu"]
+[ext_resource type="AudioStream" uid="uid://dyjiajrvo631y" path="res://assets/sfx/bgm/bgm.ogg" id="1_3hds8"]
+[ext_resource type="AudioStream" uid="uid://3l82017mhdj7" path="res://assets/sfx/ui/ui_press.ogg" id="3_ucyh0"]
+[ext_resource type="AudioStream" uid="uid://bwges4mwaddiu" path="res://assets/sfx/ui/ui_focus.ogg" id="4_ro1gc"]
+
+[node name="SoundManager" type="Node" node_paths=PackedStringArray("SFX", "BGMPlayer")]
+script = ExtResource("1_2w3gu")
+SFX = NodePath("SFX")
+BGMPlayer = NodePath("BGM")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3hds8")
+bus = &"BGM"
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_ucyh0")
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_ro1gc")
+bus = &"SFX"
