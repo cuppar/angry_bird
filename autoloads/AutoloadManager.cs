@@ -4,7 +4,7 @@ using Godot;
 
 // ReSharper disable MemberHidesStaticFromOuterClass
 
-namespace AngryBird.Autoload;
+namespace AngryBird.Autoloads;
 
 public static class AutoloadManager
 {

@@ -1,5 +1,5 @@
 using AngryBird.Globals;
-using AngryBird.Autoload;
+using AngryBird.Autoloads;
 using AngryBird.Classes;
 using AngryBird.Constants;
 using Godot;

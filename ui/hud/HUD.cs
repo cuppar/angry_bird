@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using AngryBird.Autoload;
+using AngryBird.Autoloads;
 using Godot;
 
 namespace AngryBird.UI;

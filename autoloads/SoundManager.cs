@@ -1,6 +1,6 @@
 using Godot;
 
-namespace AngryBird.Autoload;
+namespace AngryBird.Autoloads;
 
 public partial class SoundManager : Node
 {
