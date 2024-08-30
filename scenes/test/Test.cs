@@ -1,7 +1,11 @@
+using angry_bird.Globals;
 using Godot;
-
-namespace AngryBird;
 
 public partial class Test : Node2D
 {
+    public override void _Ready()
+    {
+        base._Ready();
+        GetNode<Label>("Label").Text = $"Game mode: {Game.CurrentMode}";
+    }
 }

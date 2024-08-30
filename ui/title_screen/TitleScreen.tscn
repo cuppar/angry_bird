@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/title_screen/TitleScreen.cs" id="1_xtm2e"]
 
-[node name="TitleScreen" type="Control" node_paths=PackedStringArray("StartButton", "QuitButton")]
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("EasyButton", "HardButton", "QuitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xtm2e")
-StartButton = NodePath("VBoxContainer/StartGame")
+EasyButton = NodePath("VBoxContainer/HBoxContainer/Easy")
+HardButton = NodePath("VBoxContainer/HBoxContainer/Hard")
 QuitButton = NodePath("VBoxContainer/Quit")
 
 [node name="Title" type="Label" parent="."]
@@ -25,7 +26,7 @@ offset_bottom = 211.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.858824, 0.258824, 1, 1)
 theme_override_font_sizes/font_size = 96
-text = "我的游戏"
+text = "愤怒的小鸟"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -42,12 +43,23 @@ offset_right = 100.0
 offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 15
+theme_override_constants/separation = 20
 
-[node name="StartGame" type="Button" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Easy" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "开始游戏"
+text = "容易"
+
+[node name="Hard" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "困难"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2

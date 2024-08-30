@@ -1,3 +1,4 @@
+using angry_bird.Globals;
 using AngryBird.Autoload;
 using AngryBird.Constants;
 using Godot;
@@ -12,7 +13,8 @@ public partial class TitleScreen : Control
         AutoloadManager.SoundManager.SetupUISounds(this);
         AutoloadManager.SoundManager.PlayBGM(ResourceLoader.Load<AudioStream>(BGMPaths.Master));
 
-        StartButton.Pressed += OnStartButtonPressed;
+        EasyButton.Pressed += OnEasyButtonPressed;
+        HardButton.Pressed += OnHardButtonPressed;
         QuitButton.Pressed += OnQuitButtonPressed;
     }
 
@@ -21,8 +23,15 @@ public partial class TitleScreen : Control
         GetTree().Quit();
     }
 
-    private void OnStartButtonPressed()
+    private void OnEasyButtonPressed()
     {
+        Game.CurrentMode = Game.Mode.Easy;
+        AutoloadManager.SceneTranslation.ChangeSceneToFileAsync(ScenePaths.TestWorld);
+    }
+
+    private void OnHardButtonPressed()
+    {
+        Game.CurrentMode = Game.Mode.Hard;
         AutoloadManager.SceneTranslation.ChangeSceneToFileAsync(ScenePaths.TestWorld);
     }
 
@@ -31,7 +40,9 @@ public partial class TitleScreen : Control
 
     [ExportGroup("ChildDontChange")]
     [Export]
-    public Button StartButton { get; set; } = null!;
+    public Button EasyButton { get; set; } = null!;
+
+    [Export] public Button HardButton { get; set; } = null!;
 
     [Export] public Button QuitButton { get; set; } = null!;
 
