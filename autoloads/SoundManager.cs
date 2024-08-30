@@ -25,18 +25,23 @@ public partial class SoundManager : Node
 
     public void SetupUISounds(Node node)
     {
-        if (node is Button button)
+        switch (node)
         {
-            button.Pressed += () => PlaySFX("UIPress");
-            button.FocusEntered += () => PlaySFX("UIFocus");
-            button.MouseEntered += button.GrabFocus;
-        }
-
-        if (node is Slider slider)
-        {
-            slider.ValueChanged += _ => PlaySFX("UIPress");
-            slider.FocusEntered += () => PlaySFX("UIFocus");
-            slider.MouseEntered += slider.GrabFocus;
+            case TextureButton textureButton:
+                textureButton.Pressed += () => PlaySFX("UIPress");
+                textureButton.FocusEntered += () => PlaySFX("UIFocus");
+                textureButton.MouseEntered += textureButton.GrabFocus;
+                break;
+            case Button button:
+                button.Pressed += () => PlaySFX("UIPress");
+                button.FocusEntered += () => PlaySFX("UIFocus");
+                button.MouseEntered += button.GrabFocus;
+                break;
+            case Slider slider:
+                slider.ValueChanged += _ => PlaySFX("UIPress");
+                slider.FocusEntered += () => PlaySFX("UIFocus");
+                slider.MouseEntered += slider.GrabFocus;
+                break;
         }
 
         foreach (var child in node.GetChildren())

@@ -15,6 +15,7 @@ public partial class LevelSelectScreen : Control
         ReturnButton.Pressed += OnReturnButtonPressed;
         _levelButtonPrefab = ResourceLoader.Load<PackedScene>(PrefabPaths.UI.LevelButton);
         SetupLevelButtons();
+        AutoloadManager.SoundManager.SetupUISounds(this);
     }
 
     private void OnReturnButtonPressed()

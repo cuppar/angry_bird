@@ -26,13 +26,13 @@ public partial class TitleScreen : Control
     private void OnEasyButtonPressed()
     {
         Game.CurrentMode = Game.Mode.Easy;
-        AutoloadManager.SceneTranslation.ChangeSceneToFileAsync(ScenePaths.TestWorld);
+        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.LevelSelectionScreen);
     }
 
     private void OnHardButtonPressed()
     {
         Game.CurrentMode = Game.Mode.Hard;
-        AutoloadManager.SceneTranslation.ChangeSceneToFileAsync(ScenePaths.TestWorld);
+        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.LevelSelectionScreen);
     }
 
 

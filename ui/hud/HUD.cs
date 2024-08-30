@@ -7,7 +7,7 @@ namespace AngryBird.UI;
 
 public partial class HUD : CanvasLayer
 {
-    private static readonly Type[] ScenesNeedHideHUD = { typeof(TitleScreen) };
+    private static readonly Type[] ScenesNeedHideHUD = { typeof(TitleScreen), typeof(LevelSelectScreen) };
 
     private void HideHUDInSomeScene()
     {
