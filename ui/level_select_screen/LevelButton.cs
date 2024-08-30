@@ -1,3 +1,4 @@
+using AngryBird.Globals;
 using AngryBird.Autoload;
 using AngryBird.Classes;
 using AngryBird.Constants;
@@ -7,41 +8,58 @@ namespace AngryBird.UI;
 
 public partial class LevelButton : ImageButton
 {
-    private int _level = 1;
+    #region Level
 
-    private bool _locked = true;
+    private int _level = 1;
 
     [Export]
     public int Level
     {
         get => _level;
-        set
-        {
-            _level = value;
-            LevelLabel.Text = Level.ToString();
-        }
+        set => SetLevel(value);
     }
+
+    private async void SetLevel(int value)
+    {
+        _level = value;
+        await Helper.WaitNodeReady(this);
+        LevelLabel.Text = Level.ToString();
+    }
+
+    #endregion
+
+    #region Locked
+
+    private bool _locked = true;
 
     [Export]
     public bool Locked
     {
         get => _locked;
-        set
-        {
-            _locked = value;
-            if (_locked)
-                Lock();
-            else
-                Unlock();
-        }
+        set => SetLocked(value);
     }
 
+    private async void SetLocked(bool value)
+    {
+        _locked = value;
+        await Helper.WaitNodeReady(this);
+        if (_locked)
+            Lock();
+        else
+            Unlock();
+    }
+
+    #endregion
+
+    private LevelButton()
+    {
+        Locked = true;
+        Level = 1;
+    }
 
     public override void _Ready()
     {
         base._Ready();
-        Locked = true;
-        Level = 1;
         Pressed += OnPressed;
     }
 

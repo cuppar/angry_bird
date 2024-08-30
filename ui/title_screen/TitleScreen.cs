@@ -1,4 +1,4 @@
-using angry_bird.Globals;
+using AngryBird.Globals;
 using AngryBird.Autoload;
 using AngryBird.Constants;
 using Godot;

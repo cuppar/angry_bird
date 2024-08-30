@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddey64q32orb0"]
+[gd_scene load_steps=2 format=3 uid="uid://ddey64q32orb0"]
 
 [ext_resource type="Script" path="res://ui/level_select_screen/LevelSelectScreen.cs" id="1_8gbsp"]
-[ext_resource type="PackedScene" uid="uid://bq3w8chympk48" path="res://ui/level_select_screen/level_button.tscn" id="1_tbuvt"]
 
-[node name="LevelSelectScreen" type="Control"]
+[node name="LevelSelectScreen" type="Control" node_paths=PackedStringArray("ReturnButton", "LevelButtonContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8gbsp")
+ReturnButton = NodePath("ReturnButton")
+LevelButtonContainer = NodePath("LevelButtonContainer")
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
@@ -20,7 +21,7 @@ offset_right = 130.0
 offset_bottom = 89.0
 text = "返回"
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="LevelButtonContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,21 +37,3 @@ grow_vertical = 2
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 45
 columns = 3
-
-[node name="LevelButton" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
-
-[node name="LevelButton2" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
-
-[node name="LevelButton3" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
-
-[node name="LevelButton4" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
-
-[node name="LevelButton5" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
-
-[node name="LevelButton6" parent="GridContainer" instance=ExtResource("1_tbuvt")]
-layout_mode = 2
