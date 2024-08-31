@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dweh1f0cgi0l1"]
+
+[ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
+[ext_resource type="PackedScene" uid="uid://l4cngyuko0oj" path="res://scenes/levels/base/bird.tscn" id="2_5c7cy"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_xx553")
+
+[node name="Bird" parent="." instance=ExtResource("2_5c7cy")]
+position = Vector2(168, 261)
+mass = 0.111
