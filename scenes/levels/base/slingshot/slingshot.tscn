@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkv14awby4fk"]
+
+[ext_resource type="Script" path="res://scenes/levels/base/slingshot/Slingshot.cs" id="1_h5v8q"]
+[ext_resource type="PackedScene" uid="uid://7fnqe6g0tm3b" path="res://scenes/levels/base/slingshot/bird_in_slingshot.tscn" id="2_1whkm"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/birds.png" id="2_s827j"]
+
+[node name="Slingshot" type="Node2D" node_paths=PackedStringArray("BirdInSlingshot")]
+script = ExtResource("1_h5v8q")
+BirdInSlingshot = NodePath("BirdInSlingshot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("2_s827j")
+region_enabled = true
+region_rect = Rect2(393, 318, 60, 77)
+
+[node name="BirdInSlingshot" parent="." instance=ExtResource("2_1whkm")]

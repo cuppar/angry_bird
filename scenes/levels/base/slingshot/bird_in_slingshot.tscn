@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://7fnqe6g0tm3b"]
+
+[ext_resource type="Script" path="res://scenes/levels/base/slingshot/BirdInSlingshot.cs" id="1_osmlm"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/birds.png" id="1_u82rx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imd1t"]
+radius = 20.0
+
+[node name="BirdInSlingshot" type="Area2D"]
+script = ExtResource("1_osmlm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_imd1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -3)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_u82rx")
+region_enabled = true
+region_rect = Rect2(113, 132, 77, 70)
