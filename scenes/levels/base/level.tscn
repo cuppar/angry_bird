@@ -1,11 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=6 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="PackedScene" uid="uid://l4cngyuko0oj" path="res://scenes/levels/base/bird.tscn" id="2_5c7cy"]
+[ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
+[ext_resource type="Script" path="res://scenes/levels/base/Camera2d.cs" id="4_htuda"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xx553")
 
+[node name="Background" type="Parallax2D" parent="."]
+repeat_size = Vector2(2592, 0)
+
+[node name="Sky" type="Sprite2D" parent="Background"]
+position = Vector2(1296, 324)
+scale = Vector2(1.26563, 1.26563)
+texture = ExtResource("2_x0bsa")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_rxmki")
+
 [node name="Bird" parent="." instance=ExtResource("2_5c7cy")]
 position = Vector2(168, 261)
-mass = 0.111
+InitForce = Vector2(5000, -5000)
+
+[node name="Camera2D" type="Camera2D" parent="Bird"]
+limit_top = 0
+limit_bottom = 648
+script = ExtResource("4_htuda")

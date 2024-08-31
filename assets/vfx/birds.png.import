@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce7ejk3yr2r1r"
-valid=false
+uid="uid://cxkrj14jia1ul"
+path="res://.godot/imported/birds.png-45a03c40115b85aa02cb3fdff3769a33.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/vfx/images.png"
+source_file="res://assets/vfx/birds.png"
+dest_files=["res://.godot/imported/birds.png-45a03c40115b85aa02cb3fdff3769a33.ctex"]
 
 [params]
 

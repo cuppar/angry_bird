@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bicbnk16icqd7"
-path="res://.godot/imported/birds.jpg-91f3d4c7f204d8209e9c83edacbddd4e.ctex"
+uid="uid://dkoupce7wimkv"
+path="res://.godot/imported/vecteezy_angry-birds-characters_67807-removebg-preview.png-871c66e06c9b5dc7af08d1400743c121.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vfx/birds.jpg"
-dest_files=["res://.godot/imported/birds.jpg-91f3d4c7f204d8209e9c83edacbddd4e.ctex"]
+source_file="res://ui/vecteezy_angry-birds-characters_67807-removebg-preview.png"
+dest_files=["res://.godot/imported/vecteezy_angry-birds-characters_67807-removebg-preview.png-871c66e06c9b5dc7af08d1400743c121.ctex"]
 
 [params]
 

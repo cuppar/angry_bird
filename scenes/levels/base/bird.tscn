@@ -1,12 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://l4cngyuko0oj"]
+[gd_scene load_steps=5 format=3 uid="uid://l4cngyuko0oj"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Bird.cs" id="1_lf6jc"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/birds.png" id="2_nvkha"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ss6r"]
+bounce = 0.6
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imd1t"]
 radius = 20.0
 
 [node name="Bird" type="RigidBody2D"]
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_3ss6r")
 script = ExtResource("1_lf6jc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -3)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("2_nvkha")
+region_enabled = true
+region_rect = Rect2(113, 132, 77, 70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_imd1t")
