@@ -3,32 +3,44 @@
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="PackedScene" uid="uid://l4cngyuko0oj" path="res://scenes/levels/base/bird.tscn" id="2_5c7cy"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
-[ext_resource type="Script" path="res://scenes/levels/base/Camera2d.cs" id="4_htuda"]
+[ext_resource type="PackedScene" uid="uid://bu0kr8o5rl0lq" path="res://scenes/levels/base/camera.tscn" id="3_m2yvg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xx553")
 
-[node name="Background" type="Parallax2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sky" type="Parallax2D" parent="Background"]
 repeat_size = Vector2(2592, 0)
 
-[node name="Sky" type="Sprite2D" parent="Background"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
 position = Vector2(1296, 324)
 scale = Vector2(1.26563, 1.26563)
 texture = ExtResource("2_x0bsa")
 
-[node name="Floor" type="StaticBody2D" parent="."]
+[node name="Edges" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Edges"]
 position = Vector2(0, 648)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edges/Floor"]
 shape = SubResource("WorldBoundaryShape2D_rxmki")
+
+[node name="LeftLimit" type="Marker2D" parent="Edges"]
+gizmo_extents = 500.0
+
+[node name="RightLimit" type="Marker2D" parent="Edges"]
+position = Vector2(1565, 0)
+gizmo_extents = 500.0
 
 [node name="Bird" parent="." instance=ExtResource("2_5c7cy")]
 position = Vector2(168, 261)
 InitForce = Vector2(5000, -5000)
 
-[node name="Camera2D" type="Camera2D" parent="Bird"]
-limit_top = 0
-limit_bottom = 648
-script = ExtResource("4_htuda")
+[node name="Camera2D" parent="Bird" node_paths=PackedStringArray("LeftLimit", "RightLimit") instance=ExtResource("3_m2yvg")]
+LeftLimit = NodePath("../../Edges/LeftLimit")
+RightLimit = NodePath("../../Edges/RightLimit")

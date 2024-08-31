@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu0kr8o5rl0lq"]
+
+[ext_resource type="Script" path="res://scenes/levels/base/Camera.cs" id="1_yruox"]
+
+[node name="Camera" type="Camera2D"]
+limit_top = 0
+limit_bottom = 648
+position_smoothing_enabled = true
+script = ExtResource("1_yruox")
