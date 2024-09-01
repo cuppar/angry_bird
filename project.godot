@@ -23,7 +23,6 @@ buses/default_bus_layout="res://assets/sfx/default_bus_layout.tres"
 
 SceneTranslation="*res://addons/scene_translation/scene_translation.tscn"
 SoundManager="*res://autoloads/sound_manager.tscn"
-HUD="*res://ui/hud/hud.tscn"
 
 [display]
 

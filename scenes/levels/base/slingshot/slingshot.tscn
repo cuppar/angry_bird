@@ -1,17 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://pkv14awby4fk"]
+[gd_scene load_steps=6 format=3 uid="uid://pkv14awby4fk"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/slingshot/Slingshot.cs" id="1_h5v8q"]
 [ext_resource type="PackedScene" uid="uid://7fnqe6g0tm3b" path="res://scenes/levels/base/slingshot/bird_in_slingshot.tscn" id="2_1whkm"]
-[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/birds.png" id="2_s827j"]
+[ext_resource type="Texture2D" uid="uid://ccnpwtsclwyl2" path="res://scenes/levels/base/assets/Slingshot_back.png" id="2_3fmx7"]
+[ext_resource type="Texture2D" uid="uid://c6g8g3e5p8fhn" path="res://scenes/levels/base/assets/Slingshot_line.png" id="3_nj70k"]
+[ext_resource type="Texture2D" uid="uid://b42ufowxka5i5" path="res://scenes/levels/base/assets/Slingshot_front.png" id="4_au371"]
 
-[node name="Slingshot" type="Node2D" node_paths=PackedStringArray("BirdInSlingshot")]
+[node name="Slingshot" type="Node2D" node_paths=PackedStringArray("BirdInSlingshot", "FrontLine", "BackLine")]
 script = ExtResource("1_h5v8q")
 BirdInSlingshot = NodePath("BirdInSlingshot")
+FrontLine = NodePath("Front/LinePivot/Line2D")
+BackLine = NodePath("Back/LinePivot/Line2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -11)
-texture = ExtResource("2_s827j")
-region_enabled = true
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(-28, 123)
+texture = ExtResource("2_3fmx7")
+flip_h = true
 region_rect = Rect2(393, 318, 60, 77)
 
+[node name="LinePivot" type="Node2D" parent="Back"]
+show_behind_parent = true
+position = Vector2(28, -123)
+
+[node name="Line2D" type="Line2D" parent="Back/LinePivot"]
+points = PackedVector2Array(34, -8)
+texture = ExtResource("3_nj70k")
+texture_mode = 2
+end_cap_mode = 2
+
 [node name="BirdInSlingshot" parent="." instance=ExtResource("2_1whkm")]
+
+[node name="Front" type="Sprite2D" parent="."]
+position = Vector2(-28, 123)
+texture = ExtResource("4_au371")
+flip_h = true
+region_rect = Rect2(393, 318, 60, 77)
+
+[node name="LinePivot" type="Node2D" parent="Front"]
+show_behind_parent = true
+position = Vector2(28, -123)
+
+[node name="Line2D" type="Line2D" parent="Front/LinePivot"]
+points = PackedVector2Array(-29, 4)
+texture = ExtResource("3_nj70k")
+texture_mode = 2
+end_cap_mode = 2

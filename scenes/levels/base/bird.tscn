@@ -9,9 +9,10 @@ bounce = 0.6
 [sub_resource type="CircleShape2D" id="CircleShape2D_imd1t"]
 radius = 20.0
 
-[node name="Bird" type="RigidBody2D"]
+[node name="Bird" type="RigidBody2D" node_paths=PackedStringArray("Sprite")]
 physics_material_override = SubResource("PhysicsMaterial_3ss6r")
 script = ExtResource("1_lf6jc")
+Sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_imd1t")

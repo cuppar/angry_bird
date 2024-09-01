@@ -1,11 +1,5 @@
-[gd_scene format=3 uid="uid://coyqfbih1veg8"]
+[gd_scene load_steps=2 format=3 uid="uid://bk86tujexm2go"]
 
-[node name="Level01" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_q04y8"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 347.0
-offset_top = 336.0
-offset_right = 1025.0
-offset_bottom = 590.0
-theme_override_font_sizes/font_size = 186
-text = "level 01"
+[node name="Level" instance=ExtResource("1_q04y8")]

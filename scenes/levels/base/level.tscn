@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=7 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
+[ext_resource type="PackedScene" uid="uid://bu0kr8o5rl0lq" path="res://scenes/levels/base/camera.tscn" id="3_m2yvg"]
 [ext_resource type="PackedScene" uid="uid://pkv14awby4fk" path="res://scenes/levels/base/slingshot/slingshot.tscn" id="5_psx3v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
@@ -9,9 +10,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm27w"]
 size = Vector2(94, 88)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit")]
 script = ExtResource("1_xx553")
 Slingshot = NodePath("Slingshot")
+Camera = NodePath("Camera")
+LeftLimit = NodePath("Edges/LeftLimit")
+RightLimit = NodePath("Edges/RightLimit")
 
 [node name="Background" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -37,7 +41,7 @@ shape = SubResource("WorldBoundaryShape2D_rxmki")
 gizmo_extents = 500.0
 
 [node name="RightLimit" type="Marker2D" parent="Edges"]
-position = Vector2(1565, 0)
+position = Vector2(1706, 0)
 gizmo_extents = 500.0
 
 [node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
@@ -156,3 +160,7 @@ mass = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D16"]
 shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="Camera" parent="." node_paths=PackedStringArray("LeftLimit", "RightLimit") instance=ExtResource("3_m2yvg")]
+LeftLimit = NodePath("../Edges/LeftLimit")
+RightLimit = NodePath("../Edges/RightLimit")

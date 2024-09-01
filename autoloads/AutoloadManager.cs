@@ -1,5 +1,4 @@
 using System;
-using AngryBird.UI;
 using Godot;
 
 // ReSharper disable MemberHidesStaticFromOuterClass
@@ -123,6 +122,6 @@ public static class AutoloadManager
     public static SoundManager SoundManager { get; } =
         ((SceneTree)Engine.GetMainLoop()).Root.GetNode<SoundManager>("/root/SoundManager");
     
-    public static HUD HUD { get; } =
-        ((SceneTree)Engine.GetMainLoop()).Root.GetNode<HUD>("/root/HUD");
+    // public static HUD HUD { get; } =
+    //     ((SceneTree)Engine.GetMainLoop()).Root.GetNode<HUD>("/root/HUD");
 }

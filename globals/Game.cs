@@ -10,5 +10,5 @@ public static class Game
 
     public static Mode CurrentMode { get; set; } = Mode.Easy;
     public static int LevelTotal => 6;
-    public static int UnlockedLevelCount { get; set; } = 4;
+    public static int UnlockedLevelCount { get; set; } = 1;
 }
