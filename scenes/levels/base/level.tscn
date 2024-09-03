@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=9 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
 [ext_resource type="PackedScene" uid="uid://bu0kr8o5rl0lq" path="res://scenes/levels/base/camera.tscn" id="3_m2yvg"]
 [ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="5_177sq"]
+[ext_resource type="PackedScene" uid="uid://bghc1sa1jkp0q" path="res://scenes/levels/base/live.tscn" id="5_fveh0"]
 [ext_resource type="PackedScene" uid="uid://pkv14awby4fk" path="res://scenes/levels/base/slingshot/slingshot.tscn" id="5_psx3v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
@@ -11,12 +12,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm27w"]
 size = Vector2(94, 88)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI")]
 script = ExtResource("1_xx553")
+LiveLeft = 6
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Edges/LeftLimit")
 RightLimit = NodePath("Edges/RightLimit")
+LiveUI = NodePath("Live")
 
 [node name="Background" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -51,6 +54,8 @@ position = Vector2(223, 463)
 [node name="Camera" parent="." node_paths=PackedStringArray("LeftLimit", "RightLimit") instance=ExtResource("3_m2yvg")]
 LeftLimit = NodePath("../Edges/LeftLimit")
 RightLimit = NodePath("../Edges/RightLimit")
+
+[node name="Live" parent="." instance=ExtResource("5_fveh0")]
 
 [node name="Debug" type="Node2D" parent="."]
 

@@ -1,5 +1,6 @@
 using System.Linq;
 using AngryBird.Constants;
+using AngryBird.Globals;
 using Godot;
 using static System.Diagnostics.Debug;
 
@@ -8,11 +9,31 @@ namespace AngryBird;
 public partial class Level : Node2D
 {
     private Bird? _shotBird;
-    [Export] public int LiveLeft { get; set; } = 10;
+
+    #region LiveLeft
+
+    private int _liveLeft = 5;
+
+    [Export]
+    public int LiveLeft
+    {
+        get => _liveLeft;
+        set => SetLiveLeft(value);
+    }
+
+    private async void SetLiveLeft(int value)
+    {
+        _liveLeft = value;
+        await Helper.WaitNodeReady(this);
+        LiveUI.LiveLeft = LiveLeft;
+    }
+
+    #endregion
 
     public override void _Ready()
     {
         base._Ready();
+        SetLiveLeft(LiveLeft);
         Slingshot.Shoot += OnSlingshotShoot;
     }
 
@@ -94,6 +115,7 @@ public partial class Level : Node2D
     [Export] public Camera Camera { get; set; } = null!;
     [Export] public Marker2D LeftLimit = null!;
     [Export] public Marker2D RightLimit = null!;
+    [Export] public Live LiveUI { get; set; } = null!;
 
     #endregion
 }
