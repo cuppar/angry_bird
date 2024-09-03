@@ -9,7 +9,6 @@ namespace AngryBird;
 
 public partial class Level : Node2D
 {
-    private bool _hasOpened;
     private Bird? _shotBird;
 
     public override void _Ready()
@@ -92,12 +91,8 @@ public partial class Level : Node2D
     {
         if (Game.UnlockedLevelCount == Game.CurrentLevel)
             Game.UnlockedLevelCount += 1;
-        // todo
-        if (!_hasOpened)
-        {
-            _hasOpened = true;
-            LevelPassPopup.PopupCentered();
-        }
+        SetPhysicsProcess(false);
+        LevelPassPopup.PopupCentered();
     }
 
     #region LiveLeft

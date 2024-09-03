@@ -16,12 +16,12 @@ public partial class LevelPassPanel : Control
     {
         base._Ready();
         AutoloadManager.SoundManager.SetupUISounds(this);
-        MainMenuButton.Pressed += OnButtonPressed;
-        ReplayButton.Pressed += OnButtonPressed;
-        NextLevelButton.Pressed += OnButtonPressed;
+        MainMenuButton.Close += OnClose;
+        ReplayButton.Close += OnClose;
+        NextLevelButton.Close += OnClose;
     }
 
-    private void OnButtonPressed()
+    private void OnClose()
     {
         EmitSignal(SignalName.Close);
     }

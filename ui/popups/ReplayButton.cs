@@ -5,6 +5,9 @@ namespace AngryBird.UI;
 
 public partial class ReplayButton : ImageButton
 {
+    [Signal]
+    public delegate void CloseEventHandler();
+
     public override void _Ready()
     {
         base._Ready();
@@ -13,6 +16,7 @@ public partial class ReplayButton : ImageButton
 
     private void OnPressed()
     {
+        EmitSignal(SignalName.Close);
         GetTree().CallDeferred(SceneTree.MethodName.ReloadCurrentScene);
     }
 }
