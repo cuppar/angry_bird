@@ -37,6 +37,16 @@ project/assembly_name="angry_bird"
 
 enabled=PackedStringArray("res://addons/scene_translation/plugin.cfg")
 
+[importer_defaults]
+
+oggvorbisstr={
+"bar_beats": 4,
+"beat_count": 0,
+"bpm": 0,
+"loop": true,
+"loop_offset": 0
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

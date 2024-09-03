@@ -6,6 +6,7 @@ namespace AngryBird;
 public partial class Level : Node2D
 {
     private Bird? _shotBird;
+    [Export] public int LiveLeft { get; set; } = 3;
 
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public partial class Level : Node2D
         RemoveChild(Camera);
         _shotBird.AddChild(Camera);
         AddChild(_shotBird);
+        LiveLeft--;
     }
 
     private bool IsTurnStartedAndOvered()
@@ -54,11 +56,26 @@ public partial class Level : Node2D
         _shotBird = null;
     }
 
+    private bool IsGameOver()
+    {
+        return LiveLeft <= 0;
+    }
+
+    private bool IsGamePass()
+    {
+        return false;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
+        if (IsGamePass())
+            GD.Print($"Game Pass");
         if (IsTurnStartedAndOvered())
-            SetupForNewTurn();
+            if (IsGameOver())
+                GD.Print($"Game Over");
+            else
+                SetupForNewTurn();
     }
 
     #region Child
