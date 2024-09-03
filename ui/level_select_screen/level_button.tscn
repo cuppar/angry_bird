@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq3w8chympk48"]
+[gd_scene load_steps=5 format=3 uid="uid://bq3w8chympk48"]
 
-[ext_resource type="Texture2D" uid="uid://c60ofw64nldcy" path="res://icon.svg" id="1_pk4ax"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/charactor.png" id="1_qoc22"]
 [ext_resource type="Script" path="res://ui/level_select_screen/LevelButton.cs" id="2_6i3wu"]
 [ext_resource type="Texture2D" uid="uid://bstnt2bewi1r2" path="res://ui/level_select_screen/lock.png" id="3_60vog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vaor"]
+atlas = ExtResource("1_qoc22")
+region = Rect2(198, 133, 177, 162)
 
 [node name="LevelButton" type="TextureButton" node_paths=PackedStringArray("LevelLabel", "LockTexture")]
 self_modulate = Color(1, 1, 1, 0.627451)
 offset_right = 128.0
 offset_bottom = 128.0
-texture_normal = ExtResource("1_pk4ax")
+texture_normal = SubResource("AtlasTexture_6vaor")
 script = ExtResource("2_6i3wu")
 LevelLabel = NodePath("LevelLabel")
 LockTexture = NodePath("Lock")
@@ -46,6 +50,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Lock"]
+modulate = Color(0.33, 0.33, 0.33, 1)
 layout_mode = 1
 offset_right = 204.0
 offset_bottom = 192.0

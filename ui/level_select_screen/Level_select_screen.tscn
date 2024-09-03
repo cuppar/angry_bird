@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddey64q32orb0"]
+[gd_scene load_steps=3 format=3 uid="uid://ddey64q32orb0"]
 
 [ext_resource type="Script" path="res://ui/level_select_screen/LevelSelectScreen.cs" id="1_8gbsp"]
+[ext_resource type="Texture2D" uid="uid://50p4glmfeyf" path="res://ui/level_select_screen/ABRovioSupportBanner.webp" id="2_wimio"]
 
 [node name="LevelSelectScreen" type="Control" node_paths=PackedStringArray("ReturnButton", "LevelButtonContainer")]
 layout_mode = 3
@@ -12,6 +13,15 @@ grow_vertical = 2
 script = ExtResource("1_8gbsp")
 ReturnButton = NodePath("ReturnButton")
 LevelButtonContainer = NodePath("LevelButtonContainer")
+metadata/_edit_lock_ = true
+
+[node name="BG" type="TextureRect" parent="."]
+self_modulate = Color(0.15, 0.15, 0.15, 1)
+layout_mode = 0
+offset_left = -225.0
+offset_right = 1324.0
+offset_bottom = 648.0
+texture = ExtResource("2_wimio")
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
