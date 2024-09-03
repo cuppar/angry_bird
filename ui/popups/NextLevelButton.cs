@@ -10,6 +10,7 @@ public partial class NextLevelButton : ImageButton
 {
     [Signal]
     public delegate void CloseEventHandler();
+
     public override void _Ready()
     {
         base._Ready();
@@ -20,9 +21,8 @@ public partial class NextLevelButton : ImageButton
     {
         EmitSignal(SignalName.Close);
         if (Game.CurrentLevel == Game.LevelTotal)
-            // todo: 改为跳转到总的游戏通关界面
         {
-            AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.TitleScreen);
+            AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GamePassScreen);
         }
         else
         {
