@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmmtr18i510o"]
+
+[ext_resource type="Script" path="res://scenes/enemies/Pig.cs" id="1_dk02y"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/charactor.png" id="2_nnesr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbh26"]
+radius = 32.0156
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_neisl"]
+radius = 37.0135
+
+[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("HurtBox")]
+script = ExtResource("1_dk02y")
+DeathForce = 30.0
+HurtBox = NodePath("HurtBox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nnesr")
+region_enabled = true
+region_rect = Rect2(113, 223, 76, 74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_bbh26")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_neisl")

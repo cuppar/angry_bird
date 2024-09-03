@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=8 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
 [ext_resource type="PackedScene" uid="uid://bu0kr8o5rl0lq" path="res://scenes/levels/base/camera.tscn" id="3_m2yvg"]
+[ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="5_177sq"]
 [ext_resource type="PackedScene" uid="uid://pkv14awby4fk" path="res://scenes/levels/base/slingshot/slingshot.tscn" id="5_psx3v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
@@ -47,120 +48,142 @@ gizmo_extents = 500.0
 [node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
 position = Vector2(223, 463)
 
-[node name="Debug" type="Node2D" parent="."]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Debug"]
-position = Vector2(669, 585)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="Debug"]
-position = Vector2(669, 482)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D2"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D3" type="RigidBody2D" parent="Debug"]
-position = Vector2(778, 585)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D3"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D4" type="RigidBody2D" parent="Debug"]
-position = Vector2(778, 482)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D4"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D5" type="RigidBody2D" parent="Debug"]
-position = Vector2(890, 585)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D5"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D6" type="RigidBody2D" parent="Debug"]
-position = Vector2(890, 482)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D6"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D7" type="RigidBody2D" parent="Debug"]
-position = Vector2(999, 585)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D7"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D8" type="RigidBody2D" parent="Debug"]
-position = Vector2(999, 482)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D8"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D9" type="RigidBody2D" parent="Debug"]
-position = Vector2(669, 371)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D9"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D10" type="RigidBody2D" parent="Debug"]
-position = Vector2(669, 268)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D10"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D11" type="RigidBody2D" parent="Debug"]
-position = Vector2(778, 371)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D11"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D12" type="RigidBody2D" parent="Debug"]
-position = Vector2(778, 268)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D12"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D13" type="RigidBody2D" parent="Debug"]
-position = Vector2(890, 371)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D13"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D14" type="RigidBody2D" parent="Debug"]
-position = Vector2(890, 268)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D14"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D15" type="RigidBody2D" parent="Debug"]
-position = Vector2(999, 371)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D15"]
-shape = SubResource("RectangleShape2D_mm27w")
-
-[node name="RigidBody2D16" type="RigidBody2D" parent="Debug"]
-position = Vector2(999, 268)
-mass = 0.01
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/RigidBody2D16"]
-shape = SubResource("RectangleShape2D_mm27w")
-
 [node name="Camera" parent="." node_paths=PackedStringArray("LeftLimit", "RightLimit") instance=ExtResource("3_m2yvg")]
 LeftLimit = NodePath("../Edges/LeftLimit")
 RightLimit = NodePath("../Edges/RightLimit")
+
+[node name="Debug" type="Node2D" parent="."]
+
+[node name="Boxs" type="Node2D" parent="Debug"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(669, 585)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(669, 482)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D2"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(778, 585)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D3"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(778, 482)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D4"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(890, 585)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D5"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(890, 482)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D6"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D7" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(999, 585)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D7"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D8" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(999, 482)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D8"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D9" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(669, 371)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D9"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D10" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(669, 278)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D10"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D11" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(778, 371)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D11"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D12" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(778, 278)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D12"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D13" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(890, 371)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D13"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D14" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(890, 278)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D14"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D15" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(999, 371)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D15"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="RigidBody2D16" type="RigidBody2D" parent="Debug/Boxs"]
+position = Vector2(999, 278)
+mass = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D16"]
+shape = SubResource("RectangleShape2D_mm27w")
+
+[node name="Pigs" type="Node2D" parent="Debug"]
+
+[node name="Pig" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(1099, 482)
+
+[node name="Pig2" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(669, 190)
+
+[node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(778, 190)
+
+[node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(890, 190)
+
+[node name="Pig5" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(999, 175)
+
+[node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(544, 585)

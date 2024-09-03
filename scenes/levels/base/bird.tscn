@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://l4cngyuko0oj"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Bird.cs" id="1_lf6jc"]
-[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/birds.png" id="2_nvkha"]
+[ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/charactor.png" id="2_nvkha"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ss6r"]
 bounce = 0.6

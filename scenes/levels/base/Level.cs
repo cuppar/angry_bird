@@ -1,3 +1,5 @@
+using System.Linq;
+using AngryBird.Constants;
 using Godot;
 using static System.Diagnostics.Debug;
 
@@ -6,7 +8,7 @@ namespace AngryBird;
 public partial class Level : Node2D
 {
     private Bird? _shotBird;
-    [Export] public int LiveLeft { get; set; } = 3;
+    [Export] public int LiveLeft { get; set; } = 10;
 
     public override void _Ready()
     {
@@ -34,6 +36,11 @@ public partial class Level : Node2D
         var birdSlept = _shotBird.IsSleeping();
         var birdOutOfScreen = !_shotBird.IsOnScreen();
 
+        // pigs
+        if (GetTree().GetNodesInGroup(Groups.Pigs).Any(p => !((Pig)p).IsSleeping()))
+            return false;
+
+        // bird
         if (birdOutOfScreen || birdSlept)
             return true;
 
@@ -63,7 +70,7 @@ public partial class Level : Node2D
 
     private bool IsGamePass()
     {
-        return false;
+        return !GetTree().GetNodesInGroup(Groups.Pigs).Any();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -71,7 +78,7 @@ public partial class Level : Node2D
         base._PhysicsProcess(delta);
         if (IsGamePass())
             GD.Print($"Game Pass");
-        if (IsTurnStartedAndOvered())
+        else if (IsTurnStartedAndOvered())
             if (IsGameOver())
                 GD.Print($"Game Over");
             else
