@@ -82,9 +82,15 @@ public partial class Level : Node2D
             GamePass();
         else if (IsTurnStartedAndOvered())
             if (IsGameOver())
-                GD.Print("Game Over");
+                GameOver();
             else
                 SetupForNewTurn();
+    }
+
+    private void GameOver()
+    {
+        SetPhysicsProcess(false);
+        LevelFailPopup.PopupCentered();
     }
 
     private void GamePass()
@@ -126,6 +132,7 @@ public partial class Level : Node2D
     [Export] public Marker2D RightLimit = null!;
     [Export] public Live LiveUI { get; set; } = null!;
     [Export] public LevelPassPopup LevelPassPopup { get; set; } = null!;
+    [Export] public LevelFailPopup LevelFailPopup { get; set; } = null!;
 
     #endregion
 }

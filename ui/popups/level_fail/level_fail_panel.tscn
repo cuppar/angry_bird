@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6mpa325qupae"]
+
+[ext_resource type="Script" path="res://ui/popups/level_fail/LevelFailPanel.cs" id="1_um5k6"]
+[ext_resource type="PackedScene" uid="uid://16uextivjcc2" path="res://ui/popups/main_menu_button.tscn" id="2_tsfpw"]
+[ext_resource type="PackedScene" uid="uid://b60gcik7xpav5" path="res://ui/popups/replay_button.tscn" id="3_dv1ko"]
+
+[node name="LevelFailPanel" type="Control" node_paths=PackedStringArray("MainMenuButton", "ReplayButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_um5k6")
+MainMenuButton = NodePath("HBoxContainer/MainMenuButton")
+ReplayButton = NodePath("HBoxContainer/ReplayButton")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "你输了！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 55.0
+offset_right = 60.0
+offset_bottom = 103.0
+grow_horizontal = 2
+text = "再试一次！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -121.0
+offset_right = 122.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MainMenuButton" parent="HBoxContainer" instance=ExtResource("2_tsfpw")]
+layout_mode = 2
+
+[node name="ReplayButton" parent="HBoxContainer" instance=ExtResource("3_dv1ko")]
+layout_mode = 2

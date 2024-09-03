@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=11 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
@@ -7,21 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://bghc1sa1jkp0q" path="res://scenes/levels/base/live.tscn" id="5_fveh0"]
 [ext_resource type="PackedScene" uid="uid://pkv14awby4fk" path="res://scenes/levels/base/slingshot/slingshot.tscn" id="5_psx3v"]
 [ext_resource type="PackedScene" uid="uid://3l80fx0ccnq4" path="res://ui/popups/level_pass/level_pass_popup.tscn" id="6_hoyur"]
+[ext_resource type="PackedScene" uid="uid://daodhlmc4ig46" path="res://ui/popups/level_fail/level_fail_popup.tscn" id="7_62sp1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm27w"]
 size = Vector2(94, 88)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup")]
 script = ExtResource("1_xx553")
-LiveLeft = 6
+LiveLeft = 2
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Edges/LeftLimit")
 RightLimit = NodePath("Edges/RightLimit")
 LiveUI = NodePath("Live")
 LevelPassPopup = NodePath("Popups/LevelPassPopup")
+LevelFailPopup = NodePath("Popups/LevelFailPopup")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Node2D" parent="."]
@@ -64,6 +66,10 @@ RightLimit = NodePath("../Edges/RightLimit")
 [node name="Popups" type="Node2D" parent="."]
 
 [node name="LevelPassPopup" parent="Popups" instance=ExtResource("6_hoyur")]
+visible = false
+
+[node name="LevelFailPopup" parent="Popups" instance=ExtResource("7_62sp1")]
+visible = false
 
 [node name="Debug" type="Node2D" parent="."]
 
@@ -190,7 +196,7 @@ position = Vector2(544, 485)
 position = Vector2(544, 153)
 
 [node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 60)
+position = Vector2(58, 588)
 
 [node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(544, 400)
