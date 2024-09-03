@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct2eh1prstk2b"
-path="res://.godot/imported/Spritesheet_UI_Flat.png-939572e96dbbaba22e22756fbd575639.ctex"
+uid="uid://d022yiprt3kis"
+path="res://.godot/imported/buttons.png-0708b8a4a90b8e18430e609ccba4541a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/base/assets/Spritesheet_UI_Flat.png"
-dest_files=["res://.godot/imported/Spritesheet_UI_Flat.png-939572e96dbbaba22e22756fbd575639.ctex"]
+source_file="res://assets/vfx/buttons.png"
+dest_files=["res://.godot/imported/buttons.png-0708b8a4a90b8e18430e609ccba4541a.ctex"]
 
 [params]
 

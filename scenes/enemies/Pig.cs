@@ -7,6 +7,15 @@ public partial class Pig : RigidBody2D
 {
     [Export] public float DeathForce { get; set; } = 100;
 
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public Area2D HurtBox { get; set; } = null!;
+
+    #endregion
+
     public override void _Ready()
     {
         base._Ready();
@@ -22,13 +31,4 @@ public partial class Pig : RigidBody2D
         if (force.Length() > DeathForce)
             QueueFree();
     }
-
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public Area2D HurtBox { get; set; } = null!;
-
-    #endregion
 }

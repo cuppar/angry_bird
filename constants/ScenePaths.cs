@@ -7,5 +7,8 @@ public static class ScenePaths
     public const string TestWorld = "res://scenes/test/Test.tscn";
 
 
-    public static string GetLevel(int level) => $"res://scenes/levels/level_{level:00}.tscn";
+    public static string GetLevel(int level)
+    {
+        return $"res://scenes/levels/level_{level:00}.tscn";
+    }
 }

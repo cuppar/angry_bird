@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b60gcik7xpav5"]
+
+[ext_resource type="Texture2D" uid="uid://d022yiprt3kis" path="res://assets/vfx/buttons.png" id="1_khs5q"]
+[ext_resource type="Script" path="res://ui/popups/ReplayButton.cs" id="2_t0ti5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd7q2"]
+atlas = ExtResource("1_khs5q")
+region = Rect2(144, 48, 16, 16)
+
+[node name="ReplayButton" type="TextureButton"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_kd7q2")
+stretch_mode = 5
+script = ExtResource("2_t0ti5")

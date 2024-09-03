@@ -7,6 +7,9 @@ namespace AngryBird.Autoloads;
 
 public static class AutoloadManager
 {
+    public static SoundManager SoundManager { get; } =
+        ((SceneTree)Engine.GetMainLoop()).Root.GetNode<SoundManager>("/root/SoundManager");
+
     #region Nested type: SceneTranslation
 
     public static class SceneTranslation
@@ -119,9 +122,6 @@ public static class AutoloadManager
 
     #endregion
 
-    public static SoundManager SoundManager { get; } =
-        ((SceneTree)Engine.GetMainLoop()).Root.GetNode<SoundManager>("/root/SoundManager");
-    
     // public static HUD HUD { get; } =
     //     ((SceneTree)Engine.GetMainLoop()).Root.GetNode<HUD>("/root/HUD");
 }

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="angry_bird"
-run/main_scene="res://scenes/levels/base/level.tscn"
+run/main_scene="res://ui/title_screen/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -36,6 +36,10 @@ project/assembly_name="angry_bird"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/scene_translation/plugin.cfg")
+
+[gui]
+
+theme/custom="res://assets/vfx/default_theme.tres"
 
 [importer_defaults]
 

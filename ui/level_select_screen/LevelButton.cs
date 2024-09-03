@@ -1,13 +1,45 @@
-using AngryBird.Globals;
 using AngryBird.Autoloads;
 using AngryBird.Classes;
 using AngryBird.Constants;
+using AngryBird.Globals;
 using Godot;
 
 namespace AngryBird.UI;
 
 public partial class LevelButton : ImageButton
 {
+    private LevelButton()
+    {
+        Locked = true;
+        Level = 1;
+    }
+
+    public override void _Ready()
+    {
+        base._Ready();
+        Pressed += OnPressed;
+    }
+
+    private void OnPressed()
+    {
+        Game.CurrentLevel = Level;
+        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Game.CurrentLevel));
+    }
+
+    private void Lock()
+    {
+        Disabled = true;
+        LockTexture.Show();
+        LevelLabel.Hide();
+    }
+
+    private void Unlock()
+    {
+        Disabled = false;
+        LockTexture.Hide();
+        LevelLabel.Show();
+    }
+
     #region Level
 
     private int _level = 1;
@@ -50,37 +82,6 @@ public partial class LevelButton : ImageButton
     }
 
     #endregion
-
-    private LevelButton()
-    {
-        Locked = true;
-        Level = 1;
-    }
-
-    public override void _Ready()
-    {
-        base._Ready();
-        Pressed += OnPressed;
-    }
-
-    private void OnPressed()
-    {
-        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Level));
-    }
-
-    private void Lock()
-    {
-        Disabled = true;
-        LockTexture.Show();
-        LevelLabel.Hide();
-    }
-
-    private void Unlock()
-    {
-        Disabled = false;
-        LockTexture.Hide();
-        LevelLabel.Show();
-    }
 
 
     #region Child

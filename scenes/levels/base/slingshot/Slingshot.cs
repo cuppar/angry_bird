@@ -20,33 +20,6 @@ public partial class Slingshot : Node2D
     [Export] public float MaxForce = 100000;
     [Export] public float MaxRadius = 150;
 
-    #region ReadyToShoot
-
-    private bool _readyToShoot = true;
-
-    [Export]
-    public bool ReadyToShoot
-    {
-        get => _readyToShoot;
-        set => SetReadyToShoot(value);
-    }
-
-    private async void SetReadyToShoot(bool value)
-    {
-        _readyToShoot = value;
-        await Helper.WaitNodeReady(this);
-        if (_readyToShoot)
-        {
-            BirdInSlingshot.Show();
-        }
-        else
-        {
-            BirdInSlingshot.Hide();
-        }
-    }
-
-    #endregion
-
 
     public override void _Ready()
     {
@@ -112,6 +85,29 @@ public partial class Slingshot : Node2D
             }
         }
     }
+
+    #region ReadyToShoot
+
+    private bool _readyToShoot = true;
+
+    [Export]
+    public bool ReadyToShoot
+    {
+        get => _readyToShoot;
+        set => SetReadyToShoot(value);
+    }
+
+    private async void SetReadyToShoot(bool value)
+    {
+        _readyToShoot = value;
+        await Helper.WaitNodeReady(this);
+        if (_readyToShoot)
+            BirdInSlingshot.Show();
+        else
+            BirdInSlingshot.Hide();
+    }
+
+    #endregion
 
     #region Child
 

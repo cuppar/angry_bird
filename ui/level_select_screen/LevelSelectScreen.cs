@@ -1,6 +1,6 @@
-using AngryBird.Globals;
 using AngryBird.Autoloads;
 using AngryBird.Constants;
+using AngryBird.Globals;
 using Godot;
 
 namespace AngryBird.UI;

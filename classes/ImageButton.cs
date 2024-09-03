@@ -12,7 +12,7 @@ public partial class ImageButton : TextureButton
     public enum StatedTexture
     {
         Light,
-        Dark,
+        Dark
     }
 
     #endregion
@@ -21,7 +21,7 @@ public partial class ImageButton : TextureButton
         new()
         {
             { StatedTexture.Light, 40 },
-            { StatedTexture.Dark, -150 },
+            { StatedTexture.Dark, -150 }
         };
 
     private void Setup()
@@ -46,7 +46,7 @@ public partial class ImageButton : TextureButton
         Dictionary<StatedTexture, Texture2D> result = new()
         {
             { StatedTexture.Light, null! },
-            { StatedTexture.Dark, null! },
+            { StatedTexture.Dark, null! }
         };
 
         if (imageFormat is not (Image.Format.Rgba8 or Image.Format.Rgb8))

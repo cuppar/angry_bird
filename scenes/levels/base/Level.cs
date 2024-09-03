@@ -1,6 +1,7 @@
 using System.Linq;
 using AngryBird.Constants;
 using AngryBird.Globals;
+using AngryBird.UI;
 using Godot;
 using static System.Diagnostics.Debug;
 
@@ -8,27 +9,8 @@ namespace AngryBird;
 
 public partial class Level : Node2D
 {
+    private bool _hasOpened;
     private Bird? _shotBird;
-
-    #region LiveLeft
-
-    private int _liveLeft = 5;
-
-    [Export]
-    public int LiveLeft
-    {
-        get => _liveLeft;
-        set => SetLiveLeft(value);
-    }
-
-    private async void SetLiveLeft(int value)
-    {
-        _liveLeft = value;
-        await Helper.WaitNodeReady(this);
-        LiveUI.LiveLeft = LiveLeft;
-    }
-
-    #endregion
 
     public override void _Ready()
     {
@@ -98,13 +80,45 @@ public partial class Level : Node2D
     {
         base._PhysicsProcess(delta);
         if (IsGamePass())
-            GD.Print($"Game Pass");
+            GamePass();
         else if (IsTurnStartedAndOvered())
             if (IsGameOver())
-                GD.Print($"Game Over");
+                GD.Print("Game Over");
             else
                 SetupForNewTurn();
     }
+
+    private void GamePass()
+    {
+        if (Game.UnlockedLevelCount == Game.CurrentLevel)
+            Game.UnlockedLevelCount += 1;
+        // todo
+        if (!_hasOpened)
+        {
+            _hasOpened = true;
+            LevelPassPopup.PopupCentered();
+        }
+    }
+
+    #region LiveLeft
+
+    private int _liveLeft = 5;
+
+    [Export]
+    public int LiveLeft
+    {
+        get => _liveLeft;
+        set => SetLiveLeft(value);
+    }
+
+    private async void SetLiveLeft(int value)
+    {
+        _liveLeft = value;
+        await Helper.WaitNodeReady(this);
+        LiveUI.LiveLeft = LiveLeft;
+    }
+
+    #endregion
 
     #region Child
 
@@ -116,6 +130,7 @@ public partial class Level : Node2D
     [Export] public Marker2D LeftLimit = null!;
     [Export] public Marker2D RightLimit = null!;
     [Export] public Live LiveUI { get; set; } = null!;
+    [Export] public LevelPassPopup LevelPassPopup { get; set; } = null!;
 
     #endregion
 }

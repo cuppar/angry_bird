@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://3l80fx0ccnq4"]
+
+[ext_resource type="Script" path="res://ui/popups/level_pass/LevelPassPopup.cs" id="1_d6smk"]
+[ext_resource type="PackedScene" uid="uid://bg6cur0d1r0ki" path="res://ui/popups/level_pass/level_pass_panel.tscn" id="2_eg76p"]
+
+[node name="LevelPassPopup" type="PopupPanel" node_paths=PackedStringArray("LevelPassPanel")]
+size = Vector2i(400, 300)
+visible = true
+script = ExtResource("1_d6smk")
+LevelPassPanel = NodePath("LevelPassPanel")
+
+[node name="LevelPassPanel" parent="." instance=ExtResource("2_eg76p")]
+offset_left = 28.0
+offset_top = 4.0
+offset_right = 372.0
+offset_bottom = 296.0

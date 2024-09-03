@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg6cur0d1r0ki"]
+
+[ext_resource type="Script" path="res://ui/popups/level_pass/LevelPassPanel.cs" id="1_6n6im"]
+[ext_resource type="PackedScene" uid="uid://16uextivjcc2" path="res://ui/popups/main_menu_button.tscn" id="2_yrklq"]
+[ext_resource type="PackedScene" uid="uid://b60gcik7xpav5" path="res://ui/popups/replay_button.tscn" id="3_m01jv"]
+[ext_resource type="PackedScene" uid="uid://6jecvj7l3h" path="res://ui/popups/next_level_button.tscn" id="4_wg1wh"]
+
+[node name="LevelPassPanel" type="Control" node_paths=PackedStringArray("MainMenuButton", "ReplayButton", "NextLevelButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6n6im")
+MainMenuButton = NodePath("VBoxContainer/MainMenuButton")
+ReplayButton = NodePath("VBoxContainer/ReplayButton")
+NextLevelButton = NodePath("VBoxContainer/NextLevelButton")
+metadata/_edit_lock_ = true
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_right = 214.0
+offset_bottom = 64.0
+grow_horizontal = 2
+text = "得分：100 x 剩余 3 次机会"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.0
+offset_top = 64.0
+offset_right = 172.0
+offset_bottom = 119.0
+grow_horizontal = 2
+text = "最终得分：300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -129.0
+offset_right = 189.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MainMenuButton" parent="VBoxContainer" instance=ExtResource("2_yrklq")]
+layout_mode = 2
+
+[node name="ReplayButton" parent="VBoxContainer" instance=ExtResource("3_m01jv")]
+layout_mode = 2
+
+[node name="NextLevelButton" parent="VBoxContainer" instance=ExtResource("4_wg1wh")]
+layout_mode = 2
