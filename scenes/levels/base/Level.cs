@@ -11,11 +11,13 @@ public partial class Level : Node2D
 {
     private Bird? _shotBird;
 
+    public int Score { get; set; }
+
     public override void _Ready()
     {
         base._Ready();
         SetLiveLeft(LiveLeft);
-        Game.Score = 0;
+        Game.CurrentLevel = this;
         Slingshot.Shoot += OnSlingshotShoot;
     }
 
@@ -96,7 +98,7 @@ public partial class Level : Node2D
 
     private void GamePass()
     {
-        if (Game.UnlockedLevelCount == Game.CurrentLevel)
+        if (Game.UnlockedLevelCount == Game.CurrentLevelNumber)
             Game.UnlockedLevelCount += 1;
         SetPhysicsProcess(false);
         LevelPassPopup.PopupCentered();
@@ -118,7 +120,6 @@ public partial class Level : Node2D
         _liveLeft = value;
         await Helper.WaitNodeReady(this);
         LiveUI.LiveLeft = LiveLeft;
-        Game.LiveLeft = LiveLeft;
     }
 
     #endregion

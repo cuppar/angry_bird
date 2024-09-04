@@ -25,8 +25,8 @@ public partial class LevelPassPanel : Control
 
     private void OnVisibilityChanged()
     {
-        ScoreLabel.Text = $"得分：{Game.Score}, 剩余 {Game.LiveLeft} 次机会";
-        FinalScoreLabel.Text = $"最终得分：{Game.Score * (Game.LiveLeft + 1)}";
+        ScoreLabel.Text = $"得分：{Game.CurrentLevel.Score}, 剩余 {Game.CurrentLevel.LiveLeft} 次机会";
+        FinalScoreLabel.Text = $"最终得分：{Game.CurrentLevel.Score * (Game.CurrentLevel.LiveLeft + 1)}";
     }
 
     private void OnClose()

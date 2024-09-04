@@ -152,6 +152,7 @@ collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D10"]
+position = Vector2(-517, 326)
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D11" type="RigidBody2D" parent="Debug/Boxs"]
@@ -205,19 +206,19 @@ shape = SubResource("RectangleShape2D_mm27w")
 [node name="Pigs" type="Node2D" parent="Debug"]
 
 [node name="Pig" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(669, 107)
+position = Vector2(98, 525)
 
 [node name="Pig2" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(999, 107)
+position = Vector2(624, 278)
 
 [node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(554, 488)
 
 [node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(778, 107)
+position = Vector2(372, 588)
 
 [node name="Pig5" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(890, 107)
+position = Vector2(554, 388)
 
 [node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(544, 585)

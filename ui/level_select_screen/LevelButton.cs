@@ -22,8 +22,8 @@ public partial class LevelButton : ImageButton
 
     private void OnPressed()
     {
-        Game.CurrentLevel = Level;
-        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Game.CurrentLevel));
+        Game.CurrentLevelNumber = Level;
+        AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Game.CurrentLevelNumber));
     }
 
     private void Lock()

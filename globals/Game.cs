@@ -15,10 +15,9 @@ public static class Game
     #endregion
 
     public static Mode CurrentMode { get; set; } = Mode.Easy;
-    public static int CurrentLevel { get; set; } = -1;
+    public static int CurrentLevelNumber { get; set; } = -1;
     public static int LevelTotal => 2;
-    public static int Score { get; set; } = 0;
-    public static int LiveLeft { get; set; } = 0;
+    public static Level CurrentLevel { get; set; } = null!;
 
 
     #region UnlockedLevelCount

@@ -24,14 +24,14 @@ public partial class NextLevelButton : ImageButton
     private void OnPressed()
     {
         EmitSignal(SignalName.Close);
-        if (Game.CurrentLevel == Game.LevelTotal)
+        if (Game.CurrentLevelNumber == Game.LevelTotal)
         {
             AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GamePassScreen);
         }
         else
         {
-            Game.CurrentLevel += 1;
-            AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Game.CurrentLevel));
+            Game.CurrentLevelNumber += 1;
+            AutoloadManager.SceneTranslation.ChangeSceneToFile(ScenePaths.GetLevel(Game.CurrentLevelNumber));
         }
     }
 }

@@ -17,9 +17,17 @@ public partial class Pig : RigidBody2D
         ScoreLabel.Text = Score.ToString();
     }
 
+    public override void _PhysicsProcess(double delta)
+    {
+        base._PhysicsProcess(delta);
+        if (GlobalPosition.X < Game.CurrentLevel.LeftLimit.GlobalPosition.X
+            || GlobalPosition.X > Game.CurrentLevel.RightLimit.GlobalPosition.X)
+            Die();
+    }
+
     private void Die()
     {
-        Game.Score += Score;
+        Game.CurrentLevel.Score += Score;
         AnimationPlayer.Play("die");
     }
 
