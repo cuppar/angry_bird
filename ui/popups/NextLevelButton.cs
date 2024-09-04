@@ -8,8 +8,12 @@ namespace AngryBird.UI;
 
 public partial class NextLevelButton : ImageButton
 {
+    #region Delegates
+
     [Signal]
     public delegate void CloseEventHandler();
+
+    #endregion
 
     public override void _Ready()
     {

@@ -9,19 +9,6 @@ public partial class Pig : RigidBody2D
     [Export] public float DeathForce { get; set; } = 100;
     [Export] public int Score { get; set; } = 200;
 
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public Area2D HurtBox { get; set; } = null!;
-
-    [Export] public AnimationPlayer AnimationPlayer { get; set; } = null!;
-    [Export] public CollisionShape2D CollisionShape { get; set; } = null!;
-    [Export] public Label ScoreLabel { get; set; } = null!;
-
-    #endregion
-
     public override void _Ready()
     {
         base._Ready();
@@ -44,4 +31,17 @@ public partial class Pig : RigidBody2D
         if (force.Length() > DeathForce)
             Die();
     }
+
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public Area2D HurtBox { get; set; } = null!;
+
+    [Export] public AnimationPlayer AnimationPlayer { get; set; } = null!;
+    [Export] public CollisionShape2D CollisionShape { get; set; } = null!;
+    [Export] public Label ScoreLabel { get; set; } = null!;
+
+    #endregion
 }
