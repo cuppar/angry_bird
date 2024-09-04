@@ -346,7 +346,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("HurtBox", "AnimationPlayer", "CollisionShape")]
+[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("HurtBox", "AnimationPlayer", "CollisionShape", "ScoreLabel")]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_dk02y")
@@ -354,6 +354,7 @@ DeathForce = 30.0
 HurtBox = NodePath("HurtBox")
 AnimationPlayer = NodePath("AnimationPlayer")
 CollisionShape = NodePath("CollisionShape2D")
+ScoreLabel = NodePath("DieVFX/Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nnesr")

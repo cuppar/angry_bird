@@ -15,6 +15,7 @@ public partial class Level : Node2D
     {
         base._Ready();
         SetLiveLeft(LiveLeft);
+        Game.Score = 0;
         Slingshot.Shoot += OnSlingshotShoot;
     }
 
@@ -117,6 +118,7 @@ public partial class Level : Node2D
         _liveLeft = value;
         await Helper.WaitNodeReady(this);
         LiveUI.LiveLeft = LiveLeft;
+        Game.LiveLeft = LiveLeft;
     }
 
     #endregion

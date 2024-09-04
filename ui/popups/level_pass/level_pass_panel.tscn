@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b60gcik7xpav5" path="res://ui/popups/replay_button.tscn" id="3_m01jv"]
 [ext_resource type="PackedScene" uid="uid://6jecvj7l3h" path="res://ui/popups/next_level_button.tscn" id="4_wg1wh"]
 
-[node name="LevelPassPanel" type="Control" node_paths=PackedStringArray("MainMenuButton", "ReplayButton", "NextLevelButton")]
+[node name="LevelPassPanel" type="Control" node_paths=PackedStringArray("MainMenuButton", "ReplayButton", "NextLevelButton", "ScoreLabel", "FinalScoreLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,8 @@ script = ExtResource("1_6n6im")
 MainMenuButton = NodePath("VBoxContainer/MainMenuButton")
 ReplayButton = NodePath("VBoxContainer/ReplayButton")
 NextLevelButton = NodePath("VBoxContainer/NextLevelButton")
+ScoreLabel = NodePath("Score")
+FinalScoreLabel = NodePath("FinalScore")
 metadata/_edit_lock_ = true
 
 [node name="Score" type="Label" parent="."]
