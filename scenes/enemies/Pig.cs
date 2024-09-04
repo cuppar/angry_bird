@@ -14,6 +14,9 @@ public partial class Pig : RigidBody2D
     [Export]
     public Area2D HurtBox { get; set; } = null!;
 
+    [Export] public AnimationPlayer AnimationPlayer { get; set; } = null!;
+    [Export] public CollisionShape2D CollisionShape { get; set; } = null!;
+
     #endregion
 
     public override void _Ready()
@@ -23,12 +26,17 @@ public partial class Pig : RigidBody2D
         HurtBox.BodyEntered += OnBodyEntered;
     }
 
+    private void Die()
+    {
+        AnimationPlayer.Play("die");
+    }
+
     private void OnBodyEntered(Node2D body)
     {
         if (body is not RigidBody2D rigidBody) return;
         var relativeVelocity = rigidBody.LinearVelocity - LinearVelocity;
         var force = relativeVelocity * rigidBody.Mass;
         if (force.Length() > DeathForce)
-            QueueFree();
+            Die();
     }
 }

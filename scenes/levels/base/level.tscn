@@ -77,6 +77,7 @@ visible = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(669, 585)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D"]
@@ -84,6 +85,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(669, 482)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D2"]
@@ -91,6 +93,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(778, 585)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D3"]
@@ -98,6 +101,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(778, 482)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D4"]
@@ -105,6 +109,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D5" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(890, 585)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D5"]
@@ -112,6 +117,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D6" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(890, 482)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D6"]
@@ -119,6 +125,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D7" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(999, 585)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D7"]
@@ -126,6 +133,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D8" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(999, 482)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D8"]
@@ -133,6 +141,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D9" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(669, 371)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D9"]
@@ -140,6 +149,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D10" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(669, 278)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D10"]
@@ -147,6 +157,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D11" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(778, 371)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D11"]
@@ -154,6 +165,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D12" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(778, 278)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D12"]
@@ -161,6 +173,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D13" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(890, 371)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D13"]
@@ -168,6 +181,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D14" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(890, 278)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D14"]
@@ -175,6 +189,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D15" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(999, 371)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D15"]
@@ -182,6 +197,7 @@ shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D16" type="RigidBody2D" parent="Debug/Boxs"]
 position = Vector2(999, 278)
+collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D16"]

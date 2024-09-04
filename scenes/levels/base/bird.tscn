@@ -10,6 +10,7 @@ bounce = 0.6
 radius = 20.0
 
 [node name="Bird" type="RigidBody2D" node_paths=PackedStringArray("Sprite")]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_3ss6r")
 script = ExtResource("1_lf6jc")
 Sprite = NodePath("Sprite2D")

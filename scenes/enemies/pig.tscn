@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsmmtr18i510o"]
+[gd_scene load_steps=22 format=3 uid="uid://bsmmtr18i510o"]
 
 [ext_resource type="Script" path="res://scenes/enemies/Pig.cs" id="1_dk02y"]
 [ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/charactor.png" id="2_nnesr"]
+[ext_resource type="Texture2D" uid="uid://b40tbm50hqye8" path="res://assets/vfx/vfx.png" id="3_avaqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bbh26"]
 radius = 32.0156
@@ -9,10 +10,350 @@ radius = 32.0156
 [sub_resource type="CircleShape2D" id="CircleShape2D_neisl"]
 radius = 37.0135
 
-[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("HurtBox")]
+[sub_resource type="Animation" id="Animation_x0dwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtBox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HurtBox:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DieVFX/AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DieVFX/AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:freeze")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DieVFX/Label:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DieVFX/Label:theme_override_font_sizes/font_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [36]
+}
+
+[sub_resource type="Animation" id="Animation_ht7rf"]
+resource_name = "die"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtBox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HurtBox:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DieVFX/AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DieVFX/AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:freeze")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DieVFX/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DieVFX/Label:theme_override_font_sizes/font_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1, 30, 60]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yi2p"]
+_data = {
+"RESET": SubResource("Animation_x0dwv"),
+"die": SubResource("Animation_ht7rf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0kbi"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(0, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lb2w"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(64, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k24u5"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(128, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3di77"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(192, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7j6h"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(256, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2yve"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(320, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vho3u"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(384, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n7h1"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(448, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sky3a"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(512, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h83f5"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(576, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2a34"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(640, 960, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afadb"]
+atlas = ExtResource("3_avaqa")
+region = Rect2(704, 960, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoax4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0kbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lb2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k24u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3di77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7j6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2yve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vho3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n7h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sky3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h83f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2a34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afadb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("HurtBox", "AnimationPlayer", "CollisionShape")]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_dk02y")
 DeathForce = 30.0
 HurtBox = NodePath("HurtBox")
+AnimationPlayer = NodePath("AnimationPlayer")
+CollisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nnesr")
@@ -24,7 +365,34 @@ position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_bbh26")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_neisl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0yi2p")
+}
+
+[node name="DieVFX" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DieVFX"]
+visible = false
+self_modulate = Color(0.760545, 0.957103, 0.163831, 1)
+scale = Vector2(1.65625, 1.6875)
+sprite_frames = SubResource("SpriteFrames_qoax4")
+
+[node name="Label" type="Label" parent="DieVFX"]
+visible = false
+offset_left = -81.0
+offset_top = -100.0
+offset_right = 80.0
+offset_bottom = -31.0
+theme_override_colors/font_color = Color(0.839433, 0.320077, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
