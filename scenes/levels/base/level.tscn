@@ -16,7 +16,6 @@ size = Vector2(94, 88)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup")]
 script = ExtResource("1_xx553")
-LiveLeft = 2
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Edges/LeftLimit")
@@ -206,19 +205,19 @@ shape = SubResource("RectangleShape2D_mm27w")
 [node name="Pigs" type="Node2D" parent="Debug"]
 
 [node name="Pig" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 485)
+position = Vector2(669, 191)
 
 [node name="Pig2" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 153)
+position = Vector2(999, 191)
 
 [node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(58, 588)
 
 [node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 400)
+position = Vector2(778, 191)
 
 [node name="Pig5" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 308)
+position = Vector2(890, 191)
 
 [node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(544, 585)
