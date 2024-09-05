@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs2ved2fwim8e"]
+
+[ext_resource type="Texture2D" uid="uid://bbro0she5ewb1" path="res://scenes/items/board/board.png" id="1_fxo52"]
+[ext_resource type="Script" path="res://scenes/items/glass/Glass.cs" id="1_fyxj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d2l3"]
+size = Vector2(80, 80)
+
+[node name="Glass" type="Node2D" node_paths=PackedStringArray("RigidBody")]
+script = ExtResource("1_fyxj5")
+RigidBody = NodePath("RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 7
+mass = 0.04
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_3d2l3")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_fxo52")
+region_enabled = true
+region_rect = Rect2(394, 121, 39, 39)

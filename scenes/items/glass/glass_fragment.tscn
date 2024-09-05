@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://7iv5df37e55y"]
+
+[ext_resource type="Script" path="res://scenes/items/glass/GlassFragment.cs" id="1_asy5s"]
+[ext_resource type="Texture2D" uid="uid://bbro0she5ewb1" path="res://scenes/items/board/board.png" id="1_me0n6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_belre"]
+friction = 5.0
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k70be"]
+size = Vector2(40, 40)
+
+[node name="GlassFragment" type="RigidBody2D"]
+collision_mask = 7
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_belre")
+script = ExtResource("1_asy5s")
+MaxForce = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k70be")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_me0n6")
+region_enabled = true
+region_rect = Rect2(394, 121, 39, 39)

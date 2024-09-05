@@ -7,18 +7,19 @@ friction = 10.0
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30h5g"]
-size = Vector2(80, 80)
+size = Vector2(80, 40)
 
 [node name="IronBlock" type="RigidBody2D"]
+modulate = Color(0.337779, 1, 0.845082, 1)
 collision_mask = 7
-mass = 10.0
+mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_yiiww")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_o8m7o")
-region_enabled = true
-region_rect = Rect2(128, 160, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_30h5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 1.25)
+texture = ExtResource("1_o8m7o")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
