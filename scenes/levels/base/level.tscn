@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=13 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://3l80fx0ccnq4" path="res://ui/popups/level_pass/level_pass_popup.tscn" id="6_hoyur"]
 [ext_resource type="PackedScene" uid="uid://daodhlmc4ig46" path="res://ui/popups/level_fail/level_fail_popup.tscn" id="7_62sp1"]
 [ext_resource type="PackedScene" uid="uid://dwjpuuh28oflq" path="res://scenes/items/score_item/score_item.tscn" id="9_uj2ib"]
+[ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="10_l15vt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
@@ -76,7 +77,7 @@ visible = false
 [node name="Boxs" type="Node2D" parent="Debug"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(669, 585)
+position = Vector2(1163, 599)
 collision_mask = 7
 mass = 0.2
 
@@ -84,7 +85,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(669, 482)
+position = Vector2(1163, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -92,7 +93,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(778, 585)
+position = Vector2(1272, 599)
 collision_mask = 7
 mass = 0.2
 
@@ -100,7 +101,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(778, 482)
+position = Vector2(1272, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -108,7 +109,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D5" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(890, 585)
+position = Vector2(1384, 599)
 collision_mask = 7
 mass = 0.2
 
@@ -116,7 +117,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D6" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(890, 482)
+position = Vector2(1384, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -124,7 +125,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D7" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(999, 585)
+position = Vector2(1493, 599)
 collision_mask = 7
 mass = 0.2
 
@@ -132,7 +133,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D8" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(999, 482)
+position = Vector2(1493, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -140,7 +141,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D9" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1212, 575)
+position = Vector2(1604, 589)
 collision_mask = 7
 mass = 0.2
 
@@ -148,16 +149,16 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D10" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1212, 482)
+position = Vector2(1706, 496)
 collision_mask = 7
 mass = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Debug/Boxs/RigidBody2D10"]
-position = Vector2(-517, 326)
+position = Vector2(-160, 109)
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D11" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1321, 575)
+position = Vector2(1815, 589)
 collision_mask = 7
 mass = 0.2
 
@@ -165,7 +166,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D12" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1321, 482)
+position = Vector2(1815, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -173,7 +174,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D13" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1433, 575)
+position = Vector2(1927, 589)
 collision_mask = 7
 mass = 0.2
 
@@ -181,7 +182,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D14" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1433, 482)
+position = Vector2(1927, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -189,7 +190,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D15" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1542, 575)
+position = Vector2(2036, 589)
 collision_mask = 7
 mass = 0.2
 
@@ -197,7 +198,7 @@ mass = 0.2
 shape = SubResource("RectangleShape2D_mm27w")
 
 [node name="RigidBody2D16" type="RigidBody2D" parent="Debug/Boxs"]
-position = Vector2(1542, 482)
+position = Vector2(2036, 496)
 collision_mask = 7
 mass = 0.2
 
@@ -210,178 +211,212 @@ shape = SubResource("RectangleShape2D_mm27w")
 position = Vector2(554, 175)
 
 [node name="Pig2" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 362)
+position = Vector2(999, 599)
 
 [node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(554, 488)
+position = Vector2(722, 510)
 
 [node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(372, 588)
+position = Vector2(722, 591)
 
 [node name="Pig5" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(544, 262)
 
 [node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(544, 585)
+position = Vector2(910, 510)
 Score = 300
 
 [node name="ScoreItems" type="Node2D" parent="Debug"]
 
 [node name="ScoreItem" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(677, 123)
+position = Vector2(1171, 137)
 
 [node name="ScoreItem2" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(748, 123)
+position = Vector2(1242, 137)
 
 [node name="ScoreItem3" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(825, 123)
+position = Vector2(1319, 137)
 
 [node name="ScoreItem4" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(896, 123)
+position = Vector2(1390, 137)
 
 [node name="ScoreItem5" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(981, 123)
+position = Vector2(1475, 137)
 
 [node name="ScoreItem6" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1052, 123)
+position = Vector2(1546, 137)
 
 [node name="ScoreItem7" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1129, 123)
+position = Vector2(1623, 137)
 
 [node name="ScoreItem8" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1200, 123)
+position = Vector2(1694, 137)
 
 [node name="ScoreItem9" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(677, 255)
+position = Vector2(1171, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem10" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(748, 255)
+position = Vector2(1242, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem11" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(825, 255)
+position = Vector2(1319, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem12" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(896, 255)
+position = Vector2(1390, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem13" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(981, 255)
+position = Vector2(1475, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem14" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1052, 255)
+position = Vector2(1546, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem15" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1129, 255)
+position = Vector2(1623, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem16" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1200, 255)
+position = Vector2(1694, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem17" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(677, 382)
+position = Vector2(1171, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem19" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(825, 382)
+position = Vector2(1319, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem21" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(981, 382)
+position = Vector2(1475, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem23" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1129, 382)
+position = Vector2(1623, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem18" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1280, 123)
+position = Vector2(1774, 137)
 
 [node name="ScoreItem20" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1351, 123)
+position = Vector2(1845, 137)
 
 [node name="ScoreItem22" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1428, 123)
+position = Vector2(1922, 137)
 
 [node name="ScoreItem24" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1499, 123)
+position = Vector2(1993, 137)
 
 [node name="ScoreItem25" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1584, 123)
+position = Vector2(2078, 137)
 
 [node name="ScoreItem29" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1280, 255)
+position = Vector2(1774, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem30" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1351, 255)
+position = Vector2(1845, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem31" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1428, 255)
+position = Vector2(1922, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem32" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1499, 255)
+position = Vector2(1993, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem33" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1584, 255)
+position = Vector2(2078, 269)
 scale = Vector2(1.5, 1.5)
 SizeScale = 1.5
 Score = 200
 
 [node name="ScoreItem37" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1280, 382)
+position = Vector2(1774, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem38" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1428, 382)
+position = Vector2(1922, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
 
 [node name="ScoreItem39" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
-position = Vector2(1584, 382)
+position = Vector2(2078, 396)
 scale = Vector2(2, 2)
 SizeScale = 2.0
 Score = 500
+
+[node name="IronBlocks" type="Node2D" parent="Debug"]
+
+[node name="IronBlock" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 599)
+
+[node name="IronBlock2" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 510)
+
+[node name="IronBlock4" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 421)
+
+[node name="IronBlock5" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 332)
+
+[node name="IronBlock6" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 247)
+mass = 1.0
+
+[node name="IronBlock7" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 158)
+mass = 1.0
+
+[node name="IronBlock8" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, 69)
+mass = 1.0
+
+[node name="IronBlock9" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(813, -20)
+mass = 1.0
+
+[node name="IronBlock3" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(910, 599)
+mass = 0.084

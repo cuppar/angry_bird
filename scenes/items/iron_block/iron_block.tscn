@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://r51f16fo32cq"]
+
+[ext_resource type="Texture2D" uid="uid://ct2eh1prstk2b" path="res://assets/vfx/Spritesheet_UI_Flat.png" id="1_o8m7o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yiiww"]
+friction = 10.0
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30h5g"]
+size = Vector2(80, 80)
+
+[node name="IronBlock" type="RigidBody2D"]
+collision_mask = 7
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_yiiww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_o8m7o")
+region_enabled = true
+region_rect = Rect2(128, 160, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_30h5g")
