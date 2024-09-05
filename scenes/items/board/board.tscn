@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxkkb484m5v1n"]
+
+[ext_resource type="Script" path="res://scenes/items/board/Board.cs" id="1_qsw8d"]
+[ext_resource type="Texture2D" uid="uid://bbro0she5ewb1" path="res://scenes/items/board/board.png" id="2_od43c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t88u"]
+friction = 2.0
+rough = true
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mf383"]
+size = Vector2(134, 38)
+
+[node name="Board" type="RigidBody2D" node_paths=PackedStringArray("OriginSprite", "HitSprite")]
+modulate = Color(0.717237, 0.295901, 0, 1)
+collision_mask = 7
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_0t88u")
+script = ExtResource("1_qsw8d")
+OriginSprite = NodePath("Origin")
+HitSprite = NodePath("Hit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mf383")
+
+[node name="Origin" type="Sprite2D" parent="."]
+scale = Vector2(1.71795, 1)
+texture = ExtResource("2_od43c")
+region_enabled = true
+region_rect = Rect2(317, 78, 78, 40)
+
+[node name="Hit" type="Sprite2D" parent="."]
+scale = Vector2(1.71795, 1)
+texture = ExtResource("2_od43c")
+region_enabled = true
+region_rect = Rect2(233, 121, 78, 39)
