@@ -16,6 +16,9 @@ public partial class TitleScreen : Control
         EasyButton.Pressed += OnEasyButtonPressed;
         HardButton.Pressed += OnHardButtonPressed;
         QuitButton.Pressed += OnQuitButtonPressed;
+
+        if (Game.HasLoadFile())
+            Game.Load();
     }
 
     private void OnQuitButtonPressed()

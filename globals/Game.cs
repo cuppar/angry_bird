@@ -19,6 +19,21 @@ public static class Game
     public static int LevelTotal => 2;
     public static Level CurrentLevel { get; set; } = null!;
 
+    private const string SaveFilePath = "user://save.sav";
+
+    private static void Save()
+    {
+        using var file = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);
+        file.Store32((uint)UnlockedLevelCount);
+    }
+
+    public static void Load()
+    {
+        using var file = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Read);
+        UnlockedLevelCount = (int)file.Get32();
+    }
+
+    public static bool HasLoadFile() => FileAccess.FileExists(SaveFilePath);
 
     #region UnlockedLevelCount
 
@@ -36,6 +51,7 @@ public static class Game
         if (value == _unlockedLevelCount) return;
         if (value < 0 || value > LevelTotal) return;
         _unlockedLevelCount = value;
+        Save();
     }
 
     #endregion
