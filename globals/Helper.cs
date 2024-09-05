@@ -10,4 +10,11 @@ public static class Helper
         if (!node.IsNodeReady())
             await node.ToSignal(node, Node.SignalName.Ready);
     }
+
+    public static async Task WaitSeconds(float seconds)
+    {
+        var tree = (SceneTree)Engine.GetMainLoop();
+        using var timer = tree.CreateTimer(seconds);
+        await tree.ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
+    }
 }
