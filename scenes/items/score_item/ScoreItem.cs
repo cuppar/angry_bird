@@ -6,6 +6,38 @@ namespace AngryBird;
 [Tool]
 public partial class ScoreItem : Node2D
 {
+    public override void _Ready()
+    {
+        base._Ready();
+        ItemArea.BodyEntered += OnBodyEntered;
+    }
+
+    private void OnBodyEntered(Node2D body)
+    {
+        if (body is not Bird) return;
+        Die();
+    }
+
+    private void Die()
+    {
+        Game.CurrentLevel.Score += Score;
+        AnimationPlayer.Play("die");
+    }
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AnimationPlayer AnimationPlayer { get; set; } = null!;
+
+    [Export] public Label ScoreLabel { get; set; } = null!;
+    [Export] public Area2D ItemArea { get; set; } = null!;
+
+    #endregion
+
+
+    [ExportGroup("")]
+
     #region SizeScale
 
     private float _sizeScale = 1;
@@ -43,41 +75,6 @@ public partial class ScoreItem : Node2D
         await Helper.WaitNodeReady(this);
         ScoreLabel.Text = Score.ToString();
     }
-
-    #endregion
-
-    private ScoreItem()
-    {
-        SetSizeScale(1);
-        SetScore(100);
-    }
-
-    public override void _Ready()
-    {
-        base._Ready();
-        ItemArea.BodyEntered += OnBodyEntered;
-    }
-
-    private void OnBodyEntered(Node2D body)
-    {
-        if (body is not Bird) return;
-        Die();
-    }
-
-    private void Die()
-    {
-        Game.CurrentLevel.Score += Score;
-        AnimationPlayer.Play("die");
-    }
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public AnimationPlayer AnimationPlayer { get; set; } = null!;
-
-    [Export] public Label ScoreLabel { get; set; } = null!;
-    [Export] public Area2D ItemArea { get; set; } = null!;
 
     #endregion
 }
