@@ -14,12 +14,12 @@ public static class Game
 
     #endregion
 
+    private const string SaveFilePath = "user://save.sav";
+
     public static Mode CurrentMode { get; set; } = Mode.Easy;
     public static int CurrentLevelNumber { get; set; } = -1;
     public static int LevelTotal => 2;
     public static Level CurrentLevel { get; set; } = null!;
-
-    private const string SaveFilePath = "user://save.sav";
 
     private static void Save()
     {
@@ -33,7 +33,10 @@ public static class Game
         UnlockedLevelCount = (int)file.Get32();
     }
 
-    public static bool HasLoadFile() => FileAccess.FileExists(SaveFilePath);
+    public static bool HasLoadFile()
+    {
+        return FileAccess.FileExists(SaveFilePath);
+    }
 
     #region UnlockedLevelCount
 

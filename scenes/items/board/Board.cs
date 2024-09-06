@@ -5,9 +5,9 @@ namespace AngryBird;
 
 public partial class Board : RigidBody2D
 {
-    private int HitCount { get; set; }
     private const int ScoreFirstHit = 50;
     private const int ScoreSecondHit = 100;
+    private int HitCount { get; set; }
 
     public override void _Ready()
     {

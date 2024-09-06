@@ -4,9 +4,8 @@ namespace AngryBird;
 
 public partial class GlassFragment : RigidBody2D
 {
-    [Export] public float MaxForce { get; set; } = 5000;
-
     private bool _isFirstTick = true;
+    [Export] public float MaxForce { get; set; } = 5000;
 
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)
     {

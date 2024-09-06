@@ -1,6 +1,5 @@
 using AngryBird.Globals;
 using Godot;
-using static AngryBird.Globals.Extensions;
 
 namespace AngryBird;
 

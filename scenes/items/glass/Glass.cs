@@ -5,8 +5,16 @@ namespace AngryBird;
 
 public partial class Glass : Node2D
 {
-    [Export] public float DeathForce { get; set; } = 200;
     private PackedScene? _glassFragmentPackedScene;
+    [Export] public float DeathForce { get; set; } = 200;
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public RigidBody2D RigidBody { get; set; } = null!;
+
+    #endregion
 
     public override void _Ready()
     {
@@ -38,12 +46,4 @@ public partial class Glass : Node2D
             glassFragment.SetDeferred(Node2D.PropertyName.GlobalPosition, breakPos);
         }
     }
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public RigidBody2D RigidBody { get; set; } = null!;
-
-    #endregion
 }

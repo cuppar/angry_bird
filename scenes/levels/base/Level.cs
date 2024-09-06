@@ -96,7 +96,10 @@ public partial class Level : Node2D
         LevelFailPopup.PopupCentered();
     }
 
-    private static bool IsLastUnlockedLevel() => Game.UnlockedLevelCount == Game.CurrentLevelNumber;
+    private static bool IsLastUnlockedLevel()
+    {
+        return Game.UnlockedLevelCount == Game.CurrentLevelNumber;
+    }
 
     private void GamePass()
     {
