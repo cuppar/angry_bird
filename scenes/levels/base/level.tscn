@@ -54,7 +54,7 @@ position = Vector2(0, -265)
 gizmo_extents = 2000.0
 
 [node name="RightLimit" type="Marker2D" parent="Edges"]
-position = Vector2(2168, -265)
+position = Vector2(2504, -265)
 gizmo_extents = 2000.0
 
 [node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
@@ -233,135 +233,140 @@ Score = 300
 
 [node name="ScoreItem" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 137)
-metadata/reloading = false
+scale = Vector2(1.72, 1.72)
+SizeScale = 1.72
+Score = 200
 
 [node name="ScoreItem2" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1529, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem3" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem4" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1677, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem5" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem6" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1833, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem7" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem8" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1981, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem9" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 269)
-metadata/reloading = false
+scale = Vector2(1.72, 1.72)
+SizeScale = 1.72
+Score = 200
 
 [node name="ScoreItem10" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1529, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem11" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem12" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1677, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem13" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem14" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1833, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem15" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem16" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1981, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem17" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem19" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem21" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem23" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem18" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem20" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2132, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem22" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem24" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2280, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem25" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 137)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem29" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem30" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2132, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem31" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem32" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2280, 269)
-metadata/reloading = false
+scale = Vector2(2, 2)
+SizeScale = 2.0
 
 [node name="ScoreItem33" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 269)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem37" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem38" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="ScoreItem39" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 396)
-metadata/reloading = false
+Score = 200
 
 [node name="IronBlocks" type="Node2D" parent="Debug"]
 
@@ -395,17 +400,14 @@ position = Vector2(910, 599)
 [node name="Boards" type="Node2D" parent="Debug"]
 
 [node name="Board" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-modulate = Color(0.717237, 0.295901, 0, 1)
 position = Vector2(530, 591)
 rotation = -1.57079
 
 [node name="Board2" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-modulate = Color(0.717237, 0.295901, 0, 1)
 position = Vector2(654, 589)
 rotation = -1.57079
 
 [node name="Board3" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-modulate = Color(0.717237, 0.295901, 0, 1)
 position = Vector2(592, 502)
 
 [node name="Glasses" type="Node2D" parent="Debug"]

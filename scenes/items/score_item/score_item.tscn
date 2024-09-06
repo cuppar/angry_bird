@@ -215,10 +215,7 @@ _data = {
 }
 
 [node name="ScoreItem" type="Node2D" node_paths=PackedStringArray("AnimationPlayer", "ScoreLabel", "ItemArea")]
-scale = Vector2(4.505, 4.505)
 script = ExtResource("1_hosgx")
-SizeScale = 4.505
-Score = -1150
 AnimationPlayer = NodePath("AnimationPlayer")
 ScoreLabel = NodePath("DieVFX/Label")
 ItemArea = NodePath("Area2D")
@@ -252,7 +249,7 @@ offset_top = -79.0
 offset_right = 83.0
 offset_bottom = -10.0
 theme_override_font_sizes/font_size = 20
-text = "-1150"
+text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
