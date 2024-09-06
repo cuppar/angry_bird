@@ -8,7 +8,6 @@ friction = 5.0
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k70be"]
-size = Vector2(40, 40)
 
 [node name="GlassFragment" type="RigidBody2D"]
 collision_mask = 7
@@ -21,6 +20,7 @@ MaxForce = 500.0
 shape = SubResource("RectangleShape2D_k70be")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.512821, 0.512821)
 texture = ExtResource("1_me0n6")
 region_enabled = true
 region_rect = Rect2(394, 121, 39, 39)

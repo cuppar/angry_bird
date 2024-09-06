@@ -1,3 +1,4 @@
+using System;
 using AngryBird.Constants;
 using Godot;
 
@@ -34,16 +35,22 @@ public partial class Glass : Node2D
             Break();
     }
 
+    private const int FragmentCount = 8;
+
     private void Break()
     {
         var breakPos = RigidBody.GlobalPosition;
         RigidBody.QueueFree();
         _glassFragmentPackedScene ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.GlassFragment);
-        for (var i = 0; i < 4; i++)
+        for (var i = 0; i < FragmentCount; i++)
         {
             var glassFragment = _glassFragmentPackedScene.Instantiate<GlassFragment>();
+            var minAngle = (float)Math.PI * 2 / FragmentCount;
+            glassFragment.Direction = Vector2.Right.Rotated(i * minAngle);
             CallDeferred(Node.MethodName.AddChild, glassFragment);
-            glassFragment.SetDeferred(Node2D.PropertyName.GlobalPosition, breakPos);
+            var pos = breakPos + glassFragment.Direction *
+                ((RectangleShape2D)glassFragment.GetNode<CollisionShape2D>("CollisionShape2D").Shape).Size.X * 3;
+            glassFragment.SetDeferred(Node2D.PropertyName.GlobalPosition, pos);
         }
     }
 }
