@@ -212,22 +212,25 @@ shape = SubResource("RectangleShape2D_mm27w")
 [node name="Pigs" type="Node2D" parent="Debug"]
 
 [node name="Pig" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(454, 601)
+position = Vector2(670, 606)
 
 [node name="Pig2" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(910, 269)
+position = Vector2(372, 491)
 
 [node name="Pig3" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(990, 605)
+position = Vector2(1221, 606)
 
 [node name="Pig4" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(1097, 599)
+position = Vector2(469, 490)
 
 [node name="Pig5" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(589, 608)
+position = Vector2(805, 605)
+
+[node name="Pig7" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(1074, 369)
 
 [node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(813, 295)
+position = Vector2(1074, 199)
 Score = 300
 
 [node name="ScoreItems" type="Node2D" parent="Debug"]
@@ -373,72 +376,110 @@ Score = 200
 [node name="IronBlocks" type="Node2D" parent="Debug"]
 
 [node name="IronBlock" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(813, 599)
+position = Vector2(1030, 628)
 
 [node name="IronBlock2" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(813, 510)
+position = Vector2(1030, 586)
 
 [node name="IronBlock4" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(813, 421)
+position = Vector2(1029, 544)
 
 [node name="IronBlock5" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(813, 362)
+position = Vector2(1029, 503)
 
 [node name="IronBlock6" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(910, 547)
+position = Vector2(1125, 594)
 
 [node name="IronBlock7" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(910, 485)
+position = Vector2(1125, 551)
 
 [node name="IronBlock8" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(910, 396)
+position = Vector2(1127, 510)
 
 [node name="IronBlock9" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(910, 346)
+position = Vector2(1127, 466)
 
 [node name="IronBlock3" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
-position = Vector2(910, 599)
+position = Vector2(1126, 628)
+
+[node name="IronBlock10" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(372, 632)
+
+[node name="IronBlock11" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(372, 551)
+
+[node name="IronBlock12" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(1029, 428)
+
+[node name="IronBlock13" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(1029, 460)
+
+[node name="IronBlock14" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(469, 588)
+
+[node name="IronBlock15" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(469, 548)
+
+[node name="IronBlock16" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(1127, 425)
+
+[node name="IronBlock17" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(372, 592)
+
+[node name="IronBlock18" parent="Debug/IronBlocks" instance=ExtResource("10_l15vt")]
+position = Vector2(469, 628)
 
 [node name="Boards" type="Node2D" parent="Debug"]
 
 [node name="Board" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-position = Vector2(530, 591)
+position = Vector2(746, 574)
 rotation = -1.57079
 
 [node name="Board2" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-position = Vector2(654, 589)
+position = Vector2(870, 572)
 rotation = -1.57079
 
 [node name="Board3" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
-position = Vector2(592, 502)
+position = Vector2(808, 485)
+
+[node name="Board4" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
+position = Vector2(1007, 338)
+rotation = -1.57079
+
+[node name="Board5" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
+position = Vector2(1141, 333)
+rotation = -1.57079
+
+[node name="Board6" parent="Debug/Boards" instance=ExtResource("11_se3x8")]
+position = Vector2(1074, 252)
 
 [node name="Glasses" type="Node2D" parent="Debug"]
 
 [node name="Glass5" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(1235, 564)
+position = Vector2(1348, 603)
 
 [node name="Glass6" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
 position = Vector2(1374, 385)
 
 [node name="Glass7" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(347, 515)
+position = Vector2(574, 523)
 
 [node name="Glass8" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(347, 601)
+position = Vector2(574, 609)
 
 [node name="Glass9" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(719, 515)
+position = Vector2(935, 515)
 
 [node name="Glass10" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(719, 601)
+position = Vector2(935, 601)
 
 [node name="Glass11" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(719, 346)
+position = Vector2(935, 346)
 
 [node name="Glass12" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(719, 432)
+position = Vector2(935, 432)
 
 [node name="Bomb" type="Node2D" parent="Debug"]
 
 [node name="Bomb" parent="Debug/Bomb" instance=ExtResource("13_cwqvt")]
-position = Vector2(592, 432)
+position = Vector2(808, 415)

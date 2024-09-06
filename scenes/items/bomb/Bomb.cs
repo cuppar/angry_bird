@@ -1,5 +1,6 @@
 using System;
 using AngryBird.Constants;
+using AngryBird.Globals;
 using Godot;
 
 namespace AngryBird;
@@ -29,7 +30,8 @@ public partial class Bomb : Node2D
     {
         var breakPos = RigidBody.GlobalPosition;
         RigidBody.QueueFree();
-        // todo 动画
+        AnimationPlayer.Play("boom");
+        Game.ShakeCamera(20);
 
         _bombFragmentPrefab ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.BombFragment);
         for (var i = 0; i < FragmentCount; i++)
@@ -49,6 +51,8 @@ public partial class Bomb : Node2D
     [ExportGroup("ChildDontChange")]
     [Export]
     public RigidBody2D RigidBody { get; set; } = null!;
+
+    [Export] public AnimationPlayer AnimationPlayer { get; set; } = null!;
 
     #endregion
 }

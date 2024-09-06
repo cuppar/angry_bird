@@ -1,9 +1,17 @@
-﻿using Godot;
+﻿using System;
+using Godot;
 
 namespace AngryBird.Globals;
 
 public static class Game
 {
+    public static event Action<float>? ShakeCameraEvent;
+
+    public static void ShakeCamera(float amount)
+    {
+        ShakeCameraEvent?.Invoke(amount);
+    }
+
     #region Mode enum
 
     public enum Mode
