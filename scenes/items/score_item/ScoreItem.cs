@@ -1,11 +1,15 @@
+using System.Threading.Tasks;
+using AngryBird.Constants;
 using AngryBird.Globals;
 using Godot;
 
 namespace AngryBird;
 
 [Tool]
-public partial class ScoreItem : Node2D
+public partial class ScoreItem : Node2D, ISerializationListener
 {
+    private readonly TaskCompletionSource _toolReadyTCS = new();
+
     public override void _Ready()
     {
         base._Ready();
@@ -24,20 +28,6 @@ public partial class ScoreItem : Node2D
         AnimationPlayer.Play("die");
     }
 
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public AnimationPlayer AnimationPlayer { get; set; } = null!;
-
-    [Export] public Label ScoreLabel { get; set; } = null!;
-    [Export] public Area2D ItemArea { get; set; } = null!;
-
-    #endregion
-
-
-    [ExportGroup("")]
-
     #region SizeScale
 
     private float _sizeScale = 1;
@@ -51,8 +41,8 @@ public partial class ScoreItem : Node2D
 
     private async void SetSizeScale(float value)
     {
+        await this.EnsureToolReadyAsync(_toolReadyTCS);
         _sizeScale = value;
-        await Helper.WaitNodeReady(this);
         Scale = Scale with { X = SizeScale, Y = SizeScale };
     }
 
@@ -71,10 +61,32 @@ public partial class ScoreItem : Node2D
 
     private async void SetScore(int value)
     {
+        await this.EnsureToolReadyAsync(_toolReadyTCS);
         _score = value;
-        await Helper.WaitNodeReady(this);
         ScoreLabel.Text = Score.ToString();
     }
 
     #endregion
+    
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AnimationPlayer AnimationPlayer { get; set; } = null!;
+
+    [Export] public Label ScoreLabel { get; set; } = null!;
+    [Export] public Area2D ItemArea { get; set; } = null!;
+
+    #endregion
+
+    public void OnBeforeSerialize()
+    {
+        SetMeta(MetaNames.Reloading, true);
+    }
+
+    public void OnAfterDeserialize()
+    {
+        SetMeta(MetaNames.Reloading, false);
+        _toolReadyTCS.SetResult();
+    }
 }

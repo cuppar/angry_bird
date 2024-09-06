@@ -54,7 +54,7 @@ public partial class LevelButton : ImageButton
     private async void SetLevel(int value)
     {
         _level = value;
-        await Helper.WaitNodeReady(this);
+        await this.EnsureReadyAsync();
         LevelLabel.Text = Level.ToString();
     }
 
@@ -74,7 +74,7 @@ public partial class LevelButton : ImageButton
     private async void SetLocked(bool value)
     {
         _locked = value;
-        await Helper.WaitNodeReady(this);
+        await this.EnsureReadyAsync();
         if (_locked)
             Lock();
         else

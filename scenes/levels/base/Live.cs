@@ -1,5 +1,6 @@
 using AngryBird.Globals;
 using Godot;
+using static AngryBird.Globals.Extensions;
 
 namespace AngryBird;
 
@@ -27,7 +28,7 @@ public partial class Live : CanvasLayer
     private async void SetLiveLeft(int value)
     {
         _liveLeft = value;
-        await Helper.WaitNodeReady(this);
+        await this.EnsureReadyAsync();
         LiveLabel.Text = value.ToString();
     }
 

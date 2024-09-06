@@ -233,162 +233,135 @@ Score = 300
 
 [node name="ScoreItem" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 137)
+metadata/reloading = false
 
 [node name="ScoreItem2" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1529, 137)
+metadata/reloading = false
 
 [node name="ScoreItem3" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 137)
+metadata/reloading = false
 
 [node name="ScoreItem4" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1677, 137)
+metadata/reloading = false
 
 [node name="ScoreItem5" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 137)
+metadata/reloading = false
 
 [node name="ScoreItem6" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1833, 137)
+metadata/reloading = false
 
 [node name="ScoreItem7" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 137)
+metadata/reloading = false
 
 [node name="ScoreItem8" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1981, 137)
+metadata/reloading = false
 
 [node name="ScoreItem9" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem10" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1529, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem11" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem12" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1677, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem13" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem14" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1833, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem15" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem16" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1981, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem17" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1458, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem19" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1606, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem21" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1762, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem23" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(1910, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem18" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 137)
+metadata/reloading = false
 
 [node name="ScoreItem20" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2132, 137)
+metadata/reloading = false
 
 [node name="ScoreItem22" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 137)
+metadata/reloading = false
 
 [node name="ScoreItem24" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2280, 137)
+metadata/reloading = false
 
 [node name="ScoreItem25" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 137)
+metadata/reloading = false
 
 [node name="ScoreItem29" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem30" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2132, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem31" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem32" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2280, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem33" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 269)
-scale = Vector2(1.5, 1.5)
-SizeScale = 1.5
-Score = 200
+metadata/reloading = false
 
 [node name="ScoreItem37" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2061, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem38" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2209, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="ScoreItem39" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 396)
-scale = Vector2(2, 2)
-SizeScale = 2.0
-Score = 500
+metadata/reloading = false
 
 [node name="IronBlocks" type="Node2D" parent="Debug"]
 

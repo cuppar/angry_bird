@@ -100,7 +100,7 @@ public partial class Slingshot : Node2D
     private async void SetReadyToShoot(bool value)
     {
         _readyToShoot = value;
-        await Helper.WaitNodeReady(this);
+        await this.EnsureReadyAsync();
         if (_readyToShoot)
             BirdInSlingshot.Show();
         else

@@ -121,7 +121,7 @@ public partial class Level : Node2D
     private async void SetLiveLeft(int value)
     {
         _liveLeft = value;
-        await Helper.WaitNodeReady(this);
+        await this.EnsureReadyAsync();
         LiveUI.LiveLeft = LiveLeft;
     }
 

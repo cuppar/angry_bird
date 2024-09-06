@@ -216,10 +216,10 @@ _data = {
 
 [node name="ScoreItem" type="Node2D" node_paths=PackedStringArray("AnimationPlayer", "ScoreLabel", "ItemArea")]
 script = ExtResource("1_hosgx")
-SizeScale = 1.0
 AnimationPlayer = NodePath("AnimationPlayer")
 ScoreLabel = NodePath("DieVFX/Label")
 ItemArea = NodePath("Area2D")
+metadata/reloading = false
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
