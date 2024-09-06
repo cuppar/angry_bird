@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=16 format=3 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="10_l15vt"]
 [ext_resource type="PackedScene" uid="uid://dxkkb484m5v1n" path="res://scenes/items/board/board.tscn" id="11_se3x8"]
 [ext_resource type="PackedScene" uid="uid://cs2ved2fwim8e" path="res://scenes/items/glass/glass.tscn" id="12_8ug0t"]
+[ext_resource type="PackedScene" uid="uid://bq5xd2vwun3t5" path="res://scenes/items/bomb/bomb.tscn" id="13_cwqvt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
@@ -351,6 +352,7 @@ Score = 200
 position = Vector2(2280, 269)
 scale = Vector2(2, 2)
 SizeScale = 2.0
+Score = 200
 
 [node name="ScoreItem33" parent="Debug/ScoreItems" instance=ExtResource("9_uj2ib")]
 position = Vector2(2365, 269)
@@ -413,16 +415,16 @@ position = Vector2(592, 502)
 [node name="Glasses" type="Node2D" parent="Debug"]
 
 [node name="Glass5" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(592, 352)
+position = Vector2(1235, 564)
 
 [node name="Glass6" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(592, 438)
+position = Vector2(1374, 385)
 
 [node name="Glass7" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(592, 183)
+position = Vector2(347, 515)
 
 [node name="Glass8" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
-position = Vector2(592, 269)
+position = Vector2(347, 601)
 
 [node name="Glass9" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
 position = Vector2(719, 515)
@@ -435,3 +437,8 @@ position = Vector2(719, 346)
 
 [node name="Glass12" parent="Debug/Glasses" instance=ExtResource("12_8ug0t")]
 position = Vector2(719, 432)
+
+[node name="Bomb" type="Node2D" parent="Debug"]
+
+[node name="Bomb" parent="Debug/Bomb" instance=ExtResource("13_cwqvt")]
+position = Vector2(592, 432)

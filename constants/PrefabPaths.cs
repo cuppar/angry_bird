@@ -8,6 +8,7 @@ public static class PrefabPaths
     {
         public const string Bird = "res://scenes/levels/base/bird.tscn";
         public const string GlassFragment = "res://scenes/items/glass/glass_fragment.tscn";
+        public const string BombFragment = "res://scenes/items/bomb/bomb_fragment.tscn";
     }
 
     #endregion

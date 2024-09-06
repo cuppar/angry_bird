@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://6j7cx6uuty5k"]
+
+[ext_resource type="Script" path="res://scenes/items/bomb/BombFragment.cs" id="1_31yt7"]
+[ext_resource type="Texture2D" uid="uid://mfm0adfrt7yf" path="res://scenes/items/bomb/bomba.png" id="2_gsf5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmpvc"]
+radius = 3.0
+
+[node name="BombFragment" type="RigidBody2D"]
+collision_mask = 7
+script = ExtResource("1_31yt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mmpvc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -1)
+scale = Vector2(0.0351563, 0.0351563)
+texture = ExtResource("2_gsf5u")
+region_rect = Rect2(111, 94, 17, 18)
