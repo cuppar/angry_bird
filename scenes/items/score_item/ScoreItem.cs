@@ -10,6 +10,27 @@ public partial class ScoreItem : Node2D, ISerializationListener
 {
     private readonly TaskCompletionSource _toolReadyTCS = new();
 
+    private ScoreItem()
+    {
+        SetSizeScale(1);
+        SetScore(200);
+    }
+
+    #region ISerializationListener Members
+
+    public void OnBeforeSerialize()
+    {
+        SetMeta(MetaNames.Reloading, true);
+    }
+
+    public void OnAfterDeserialize()
+    {
+        SetMeta(MetaNames.Reloading, false);
+        _toolReadyTCS.SetResult();
+    }
+
+    #endregion
+
     public override void _Ready()
     {
         base._Ready();
@@ -67,7 +88,7 @@ public partial class ScoreItem : Node2D, ISerializationListener
     }
 
     #endregion
-    
+
     #region Child
 
     [ExportGroup("ChildDontChange")]
@@ -78,15 +99,4 @@ public partial class ScoreItem : Node2D, ISerializationListener
     [Export] public Area2D ItemArea { get; set; } = null!;
 
     #endregion
-
-    public void OnBeforeSerialize()
-    {
-        SetMeta(MetaNames.Reloading, true);
-    }
-
-    public void OnAfterDeserialize()
-    {
-        SetMeta(MetaNames.Reloading, false);
-        _toolReadyTCS.SetResult();
-    }
 }
