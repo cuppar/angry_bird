@@ -17,5 +17,5 @@ position = Vector2(538, 600)
 [node name="Pig5" parent="Debug/Pigs" index="4"]
 position = Vector2(892, 174)
 
-[node name="Pig6" parent="Debug/Pigs" index="5"]
+[node name="Pig6" parent="Debug/Pigs" index="6"]
 position = Vector2(418, 601)

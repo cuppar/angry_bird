@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=17 format=4 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxkkb484m5v1n" path="res://scenes/items/board/board.tscn" id="11_se3x8"]
 [ext_resource type="PackedScene" uid="uid://cs2ved2fwim8e" path="res://scenes/items/glass/glass.tscn" id="12_8ug0t"]
 [ext_resource type="PackedScene" uid="uid://bq5xd2vwun3t5" path="res://scenes/items/bomb/bomb.tscn" id="13_cwqvt"]
+[ext_resource type="TileSet" uid="uid://dahru26a1744w" path="res://scenes/levels/tileset/map_tile_set.tres" id="14_b2g71"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
@@ -227,10 +228,10 @@ position = Vector2(469, 490)
 position = Vector2(805, 605)
 
 [node name="Pig7" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(1074, 369)
+position = Vector2(1055, 88)
 
 [node name="Pig6" parent="Debug/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(1074, 199)
+position = Vector2(808, 219)
 Score = 300
 
 [node name="ScoreItems" type="Node2D" parent="Debug"]
@@ -483,3 +484,9 @@ position = Vector2(935, 432)
 
 [node name="Bomb" parent="Debug/Bomb" instance=ExtResource("13_cwqvt")]
 position = Vector2(808, 415)
+
+[node name="Tilemaps" type="Node2D" parent="Debug"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Debug/Tilemaps"]
+tile_map_data = PackedByteArray("AAALAAQAAAAHAAEAAAAMAAQAAAACAAAAAAANAAQAAAAIAAEAAAAPAAIAAAAHAAEAAAAQAAIAAAACAAAAAAARAAIAAAAIAAEAAAA=")
+tile_set = ExtResource("14_b2g71")
