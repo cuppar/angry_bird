@@ -4,18 +4,3 @@
 
 [node name="Level" instance=ExtResource("1_1ksvi")]
 LiveLeft = 3
-
-[node name="Pig" parent="Debug/Pigs" index="0"]
-position = Vector2(670, 191)
-
-[node name="Pig2" parent="Debug/Pigs" index="1"]
-position = Vector2(774, 177)
-
-[node name="Pig4" parent="Debug/Pigs" index="3"]
-position = Vector2(538, 600)
-
-[node name="Pig5" parent="Debug/Pigs" index="4"]
-position = Vector2(892, 174)
-
-[node name="Pig6" parent="Debug/Pigs" index="6"]
-position = Vector2(418, 601)

@@ -93,6 +93,7 @@ public partial class Level : Node2D
     private void GameOver()
     {
         SetPhysicsProcess(false);
+        GetTree().Paused = true;
         LevelFailPopup.PopupCentered();
     }
 
@@ -107,6 +108,7 @@ public partial class Level : Node2D
             Game.UnlockedLevelCount += 1;
 
         SetPhysicsProcess(false);
+        GetTree().Paused = true;
         LevelPassPopup.PopupCentered();
     }
 

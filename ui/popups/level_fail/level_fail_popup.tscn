@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c6mpa325qupae" path="res://ui/popups/level_fail/level_fail_panel.tscn" id="2_kxwdy"]
 
 [node name="LevelFailPopup" type="PopupPanel" node_paths=PackedStringArray("LevelFailPanel")]
+process_mode = 3
 size = Vector2i(400, 300)
 visible = true
 script = ExtResource("1_h03pc")

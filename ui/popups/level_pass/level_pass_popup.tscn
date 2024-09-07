@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bg6cur0d1r0ki" path="res://ui/popups/level_pass/level_pass_panel.tscn" id="2_eg76p"]
 
 [node name="LevelPassPopup" type="PopupPanel" node_paths=PackedStringArray("LevelPassPanel")]
+process_mode = 3
 size = Vector2i(400, 300)
 visible = true
 script = ExtResource("1_d6smk")

@@ -17,6 +17,10 @@ public partial class LevelFailPopup : PopupPanel
         base._Ready();
         Hide();
         PopupWindow = false;
-        LevelFailPanel.Close += Hide;
+        LevelFailPanel.Close += () =>
+        {
+            GetTree().Paused = false;
+            Hide();
+        };
     }
 }

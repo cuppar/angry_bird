@@ -17,6 +17,10 @@ public partial class LevelPassPopup : PopupPanel
         base._Ready();
         Hide();
         PopupWindow = false;
-        LevelPassPanel.Close += Hide;
+        LevelPassPanel.Close += () =>
+        {
+            GetTree().Paused = false;
+            Hide();
+        };
     }
 }
