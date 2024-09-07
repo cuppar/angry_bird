@@ -108,10 +108,12 @@ public partial class Slingshot : Node2D
 
             var x = i * trajectoryPointStepX;
 
+            var offsetX = x;
             if (startPosition.X > GlobalPosition.X)
-                x = -x;
+                offsetX = -offsetX;
+            var offsetY = GetYByX(x);
 
-            var offset = new Vector2(x, GetYByX(x));
+            var offset = new Vector2(offsetX, offsetY);
             var pos = startPosition + offset;
             point.GlobalPosition = pos;
         }
@@ -126,8 +128,8 @@ public partial class Slingshot : Node2D
             var initImpulse = GetShootInitImpulse();
             var velocity = initImpulse / mass;
             var delta = velocity.Angle();
-            var velocityX = velocity.Length() * Mathf.Cos(delta);
-            var velocityY = velocity.Length() * Mathf.Sin(delta);
+            var velocityX = Mathf.Abs(velocity.Length() * Mathf.Cos(delta));
+            var velocityY = -Mathf.Abs(velocity.Length() * Mathf.Sin(delta));
             var y = velocityY * x / velocityX + 0.5f * gravity * x * x / (velocityX * velocityX);
 
             bird.QueueFree();

@@ -4,6 +4,12 @@ namespace AngryBird.Autoloads;
 
 public partial class SoundManager : Node
 {
+    public override void _Ready()
+    {
+        base._Ready();
+        ProcessMode = ProcessModeEnum.Always;
+    }
+
     #region Bus enum
 
     public enum Bus
