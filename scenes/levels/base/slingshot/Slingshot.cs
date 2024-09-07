@@ -18,7 +18,7 @@ public partial class Slingshot : Node2D
     private PackedScene _trajectoryPointPrefab = null!;
 
     private bool _dragging;
-    [Export] public float MaxForce = 100000;
+    [Export] public float MaxForce = 1500;
     [Export] public float MaxRadius = 150;
 
 
@@ -57,7 +57,7 @@ public partial class Slingshot : Node2D
                 // GD.Print("mouse up");
                 _dragging = false;
                 var bird = _birdPrefab.Instantiate<Bird>();
-                bird.InitForce = GetShootInitForce();
+                bird.InitImpulse = GetShootInitImpulse();
                 bird.GlobalPosition = BirdInSlingshot.GlobalPosition;
                 EmitSignal(SignalName.Shoot, bird);
                 BirdInSlingshot.Reset();
@@ -87,7 +87,7 @@ public partial class Slingshot : Node2D
         }
     }
 
-    private Vector2 GetShootInitForce()
+    private Vector2 GetShootInitImpulse()
     {
         var birdPos = BirdInSlingshot.Position;
         var direction = -birdPos.Normalized();
@@ -121,19 +121,14 @@ public partial class Slingshot : Node2D
         float GetYByX(float x)
         {
             var bird = _birdPrefab.Instantiate<Bird>();
-            TrajectoryContainer.AddChild(bird);
             var mass = bird.Mass;
             var gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-            gravity *= 10000;
-            var initForce = GetShootInitForce();
-            var acceleration = initForce / mass;
-            const float time = 1;
-            var velocity = acceleration * time;
+            var initImpulse = GetShootInitImpulse();
+            var velocity = initImpulse / mass;
             var delta = velocity.Angle();
             var velocityX = velocity.Length() * Mathf.Cos(delta);
             var velocityY = velocity.Length() * Mathf.Sin(delta);
             var y = velocityY * x / velocityX + 0.5f * gravity * x * x / (velocityX * velocityX);
-            GD.Print($"gravity: {gravity}");
 
             bird.QueueFree();
             return y;

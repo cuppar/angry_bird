@@ -5,16 +5,15 @@ namespace AngryBird;
 public partial class Bird : RigidBody2D
 {
     private bool _isFly;
-    [Export] public Vector2 InitForce = new(1000, -1000);
+    [Export] public Vector2 InitImpulse = new(1000, -1000);
 
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)
     {
         base._IntegrateForces(state);
         if (!_isFly)
         {
-            state.ApplyForce(InitForce);
-            // state.ApplyImpulse(InitForce);
-            Rotation = InitForce.Angle();
+            state.ApplyImpulse(InitImpulse);
+            Rotation = InitImpulse.Angle();
             _isFly = true;
         }
     }
