@@ -13,6 +13,7 @@ public partial class Bird : RigidBody2D
         if (!_isFly)
         {
             state.ApplyForce(InitForce);
+            // state.ApplyImpulse(InitForce);
             Rotation = InitForce.Angle();
             _isFly = true;
         }

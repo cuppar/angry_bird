@@ -13,6 +13,12 @@ public partial class BirdInSlingshot : Area2D
         MouseExited += OnMouseExited;
     }
 
+    public void Reset()
+    {
+        Position = Vector2.Zero;
+        Rotation = 0;
+    }
+
     private void OnMouseEntered()
     {
         IsMouseHover = true;

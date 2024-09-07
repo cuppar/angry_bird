@@ -15,6 +15,7 @@ public partial class Slingshot : Node2D
     #endregion
 
     private PackedScene _birdPrefab = null!;
+    private PackedScene _trajectoryPointPrefab = null!;
 
     private bool _dragging;
     [Export] public float MaxForce = 100000;
@@ -25,6 +26,7 @@ public partial class Slingshot : Node2D
     {
         base._Ready();
         _birdPrefab = ResourceLoader.Load<PackedScene>(PrefabPaths.Character.Bird);
+        _trajectoryPointPrefab = ResourceLoader.Load<PackedScene>(PrefabPaths.UI.TrajectoryPoint);
         FrontLine.AddPoint(BirdInSlingshot.Position);
         BackLine.AddPoint(BirdInSlingshot.Position);
     }
@@ -54,16 +56,12 @@ public partial class Slingshot : Node2D
             {
                 // GD.Print("mouse up");
                 _dragging = false;
-                var birdPos = BirdInSlingshot.Position;
-                var direction = -birdPos.Normalized();
-                var length = birdPos.Length();
-                var force = length / MaxRadius * MaxForce;
                 var bird = _birdPrefab.Instantiate<Bird>();
-                bird.InitForce = force * direction;
-                bird.GlobalPosition = birdPos + GlobalPosition;
+                bird.InitForce = GetShootInitForce();
+                bird.GlobalPosition = BirdInSlingshot.GlobalPosition;
                 EmitSignal(SignalName.Shoot, bird);
-                BirdInSlingshot.Position = Vector2.Zero;
-                BirdInSlingshot.Rotation = 0;
+                BirdInSlingshot.Reset();
+                ClearTrajectory();
             }
         }
 
@@ -83,7 +81,70 @@ public partial class Slingshot : Node2D
                 var direction = (Vector2.Zero - mousePos).Normalized();
                 BirdInSlingshot.Position = -direction * MaxRadius;
             }
+
+            if (Game.CurrentMode == Game.Mode.Easy)
+                DrawTrajectory(BirdInSlingshot.GlobalPosition);
         }
+    }
+
+    private Vector2 GetShootInitForce()
+    {
+        var birdPos = BirdInSlingshot.Position;
+        var direction = -birdPos.Normalized();
+        var length = birdPos.Length();
+        var force = length / MaxRadius * MaxForce;
+        return force * direction;
+    }
+
+    private void DrawTrajectory(Vector2 startPosition)
+    {
+        const int trajectoryPointCount = 50;
+        const float trajectoryPointStepX = 30;
+        ClearTrajectory();
+        for (var i = 0; i < trajectoryPointCount; i++)
+        {
+            var point = _trajectoryPointPrefab.Instantiate<Node2D>();
+            TrajectoryContainer.AddChild(point);
+
+            var x = i * trajectoryPointStepX;
+
+            if (startPosition.X > GlobalPosition.X)
+                x = -x;
+
+            var offset = new Vector2(x, GetYByX(x));
+            var pos = startPosition + offset;
+            point.GlobalPosition = pos;
+        }
+
+        return;
+
+        float GetYByX(float x)
+        {
+            var bird = _birdPrefab.Instantiate<Bird>();
+            TrajectoryContainer.AddChild(bird);
+            var mass = bird.Mass;
+            var gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+            gravity *= 10000;
+            var initForce = GetShootInitForce();
+            var acceleration = initForce / mass;
+            const float time = 1;
+            var velocity = acceleration * time;
+            var delta = velocity.Angle();
+            var velocityX = velocity.Length() * Mathf.Cos(delta);
+            var velocityY = velocity.Length() * Mathf.Sin(delta);
+            var y = velocityY * x / velocityX + 0.5f * gravity * x * x / (velocityX * velocityX);
+            GD.Print($"gravity: {gravity}");
+
+            bird.QueueFree();
+            return y;
+        }
+    }
+
+    private void ClearTrajectory()
+    {
+        foreach (var child in TrajectoryContainer.GetChildren())
+            if (child.Owner is null)
+                child.QueueFree();
     }
 
     #region ReadyToShoot
@@ -116,6 +177,7 @@ public partial class Slingshot : Node2D
 
     [Export] public Line2D FrontLine = null!;
     [Export] public Line2D BackLine = null!;
+    [Export] public Node2D TrajectoryContainer { get; set; } = null!;
 
     #endregion
 }
