@@ -9,6 +9,8 @@ public partial class Bomb : Node2D
 {
     private const int FragmentCount = 20;
 
+    private PackedScene? _bombFragmentPrefab;
+
     public override void _Ready()
     {
         base._Ready();
@@ -17,8 +19,6 @@ public partial class Bomb : Node2D
         RigidBody.BodyEntered += OnBodyEntered;
         ResourceLoader.LoadThreadedRequest(PrefabPaths.Character.BombFragment);
     }
-
-    private PackedScene? _bombFragmentPrefab;
 
     private void OnBodyEntered(Node body)
     {

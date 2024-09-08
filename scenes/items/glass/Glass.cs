@@ -6,6 +6,7 @@ namespace AngryBird;
 
 public partial class Glass : Node2D
 {
+    private const int FragmentCount = 8;
     private PackedScene? _glassFragmentPackedScene;
     [Export] public float DeathForce { get; set; } = 200;
 
@@ -14,6 +15,14 @@ public partial class Glass : Node2D
     [ExportGroup("ChildDontChange")]
     [Export]
     public RigidBody2D RigidBody { get; set; } = null!;
+
+    #endregion
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AudioStreamPlayer2D BreakSFX { get; set; } = null!;
 
     #endregion
 
@@ -35,15 +44,13 @@ public partial class Glass : Node2D
             Break();
     }
 
-    private const int FragmentCount = 8;
-
     private void Break()
     {
         var breakPos = RigidBody.GlobalPosition;
         RigidBody.QueueFree();
         _glassFragmentPackedScene ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.GlassFragment);
         BreakSFX.Play();
-        
+
         for (var i = 0; i < FragmentCount; i++)
         {
             var glassFragment = _glassFragmentPackedScene.Instantiate<GlassFragment>();
@@ -55,12 +62,4 @@ public partial class Glass : Node2D
             glassFragment.SetDeferred(Node2D.PropertyName.GlobalPosition, pos);
         }
     }
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public AudioStreamPlayer2D BreakSFX { get; set; } = null!;
-
-    #endregion
 }

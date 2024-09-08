@@ -24,10 +24,7 @@ public partial class LevelFailPanel : Control
 
     private void OnVisibilityChanged()
     {
-        if (Visible && IsVisibleInTree())
-        {
-            AutoloadManager.SoundManager.PlaySFX(SFXNames.LevelFail);
-        }
+        if (Visible && IsVisibleInTree()) AutoloadManager.SoundManager.PlaySFX(SFXNames.LevelFail);
     }
 
     private void OnClose()

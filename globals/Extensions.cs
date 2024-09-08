@@ -5,7 +5,7 @@ using Godot;
 
 namespace AngryBird.Globals.Extensions;
 
-public static class NodeExtensions
+public static class Extensions
 {
     public static async Task EnsureReadyAsync(this Node node)
     {

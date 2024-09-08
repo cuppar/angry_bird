@@ -24,10 +24,7 @@ public partial class Bird : RigidBody2D
         var data = tileMapLayer.GetCellTileData(coords);
         if (data is null) return;
         var isPlatform = (bool)data.GetCustomData("IsPlatform");
-        if (isPlatform)
-        {
-            ImpactPlatformSFX.Play();
-        }
+        if (isPlatform) ImpactPlatformSFX.Play();
     }
 
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)

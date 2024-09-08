@@ -5,13 +5,6 @@ namespace AngryBird.Globals;
 
 public static class Game
 {
-    public static event Action<float>? ShakeCameraEvent;
-
-    public static void ShakeCamera(float amount)
-    {
-        ShakeCameraEvent?.Invoke(amount);
-    }
-
     #region Mode enum
 
     public enum Mode
@@ -28,6 +21,12 @@ public static class Game
     public static int CurrentLevelNumber { get; set; } = -1;
     public static int LevelTotal => 2;
     public static Level CurrentLevel { get; set; } = null!;
+    public static event Action<float>? ShakeCameraEvent;
+
+    public static void ShakeCamera(float amount)
+    {
+        ShakeCameraEvent?.Invoke(amount);
+    }
 
     private static void Save()
     {

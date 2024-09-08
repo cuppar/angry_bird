@@ -17,21 +17,9 @@ public partial class Slingshot : Node2D
     #endregion
 
     private PackedScene _birdPrefab = null!;
-    private PackedScene _trajectoryPointPrefab = null!;
-
-    #region 是否接近拉满弓
-
-    private bool _isBigPowerInLastFrame;
-    private const float Factor = 0.8f;
-
-    private bool IsBigPower(float distance)
-    {
-        return distance > MaxRadius * Factor;
-    }
-
-    #endregion
 
     private bool _dragging;
+    private PackedScene _trajectoryPointPrefab = null!;
     [Export] public float MaxForce = 1500;
     [Export] public float MaxRadius = 150;
 
@@ -104,10 +92,7 @@ public partial class Slingshot : Node2D
             // 满弓音效
             if (IsBigPower(distance))
             {
-                if (!_isBigPowerInLastFrame)
-                {
-                    AutoloadManager.SoundManager.PlaySFX(SFXNames.SlingshotBigPower);
-                }
+                if (!_isBigPowerInLastFrame) AutoloadManager.SoundManager.PlaySFX(SFXNames.SlingshotBigPower);
 
                 _isBigPowerInLastFrame = true;
             }
@@ -173,6 +158,18 @@ public partial class Slingshot : Node2D
             if (child.Owner is null)
                 child.QueueFree();
     }
+
+    #region 是否接近拉满弓
+
+    private bool _isBigPowerInLastFrame;
+    private const float Factor = 0.8f;
+
+    private bool IsBigPower(float distance)
+    {
+        return distance > MaxRadius * Factor;
+    }
+
+    #endregion
 
     #region ReadyToShoot
 

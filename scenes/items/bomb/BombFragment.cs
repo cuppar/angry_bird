@@ -4,9 +4,9 @@ namespace AngryBird;
 
 public partial class BombFragment : RigidBody2D
 {
-    [Export] public Vector2 Direction { get; set; } = Vector2.Zero;
     private bool _isFly;
     [Export] public float Force = 100000;
+    [Export] public Vector2 Direction { get; set; } = Vector2.Zero;
 
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)
     {

@@ -4,6 +4,14 @@ namespace AngryBird;
 
 public partial class IronBlock : RigidBody2D
 {
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AudioStreamPlayer2D ImpactSFX { get; set; } = null!;
+
+    #endregion
+
     public override void _Ready()
     {
         base._Ready();
@@ -16,12 +24,4 @@ public partial class IronBlock : RigidBody2D
     {
         ImpactSFX.Play();
     }
-
-    #region Child
-
-    [ExportGroup("ChildDontChange")]
-    [Export]
-    public AudioStreamPlayer2D ImpactSFX { get; set; } = null!;
-
-    #endregion
 }
