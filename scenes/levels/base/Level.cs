@@ -29,7 +29,7 @@ public partial class Level : Node2D
         _shotBird.RightLimit = RightLimit;
         RemoveChild(Camera);
         _shotBird.AddChild(Camera);
-        AddChild(_shotBird);
+        ShotBirdContainer.AddChild(_shotBird);
         LiveLeft--;
     }
 
@@ -144,6 +144,7 @@ public partial class Level : Node2D
     [Export] public Live LiveUI { get; set; } = null!;
     [Export] public LevelPassPopup LevelPassPopup { get; set; } = null!;
     [Export] public LevelFailPopup LevelFailPopup { get; set; } = null!;
+    [Export] public Node2D ShotBirdContainer { get; set; } = null!;
 
     #endregion
 }

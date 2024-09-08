@@ -17,7 +17,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup", "ShotBirdContainer")]
 script = ExtResource("1_xx553")
 LiveLeft = 10
 Slingshot = NodePath("Slingshot")
@@ -27,6 +27,7 @@ RightLimit = NodePath("Edges/RightLimit")
 LiveUI = NodePath("Live")
 LevelPassPopup = NodePath("Popups/LevelPassPopup")
 LevelFailPopup = NodePath("Popups/LevelFailPopup")
+ShotBirdContainer = NodePath("ShotBirdContainer")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Node2D" parent="."]
@@ -80,15 +81,15 @@ visible = false
 [node name="ScoreItems" type="Node2D" parent="Items"]
 
 [node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(440, 296)
+position = Vector2(1366, 397)
 Score = 200
 
 [node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(502, 296)
+position = Vector2(1428, 397)
 Score = 200
 
 [node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(569, 296)
+position = Vector2(1495, 397)
 Score = 200
 
 [node name="IronBlocks" type="Node2D" parent="Items"]
@@ -105,15 +106,15 @@ position = Vector2(1157, 107)
 [node name="Boards" type="Node2D" parent="Items"]
 
 [node name="Board" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(747, 310)
+position = Vector2(1349, 573)
 rotation = 1.57079
 
 [node name="Board2" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(840, 311)
+position = Vector2(1442, 574)
 rotation = 1.57079
 
 [node name="Board3" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(796, 219)
+position = Vector2(1398, 482)
 rotation = 3.14159
 
 [node name="Glasses" type="Node2D" parent="Items"]
@@ -130,7 +131,7 @@ position = Vector2(1254, 40)
 [node name="Bomb" type="Node2D" parent="Items"]
 
 [node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
-position = Vector2(1464, 527)
+position = Vector2(768, 327)
 
 [node name="Platform" type="Node2D" parent="Items"]
 
@@ -145,3 +146,8 @@ position = Vector2(480, 472)
 
 [node name="Pig5" parent="Items/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(1604, 602)
+
+[node name="Pig8" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(4862, 600)
+
+[node name="ShotBirdContainer" type="Node2D" parent="."]

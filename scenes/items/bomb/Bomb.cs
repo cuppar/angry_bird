@@ -32,8 +32,7 @@ public partial class Bomb : Node2D
         RigidBody.QueueFree();
         AnimationPlayer.Play("boom");
         Game.ShakeCamera(20);
-        // todo 爆炸音效
-        GD.Print($"爆炸音效");
+        BoomSFX.Play();
 
         _bombFragmentPrefab ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.BombFragment);
         for (var i = 0; i < FragmentCount; i++)
@@ -48,6 +47,12 @@ public partial class Bomb : Node2D
         }
     }
 
+    public async void CleanUp()
+    {
+        await ToSignal(BoomSFX, AudioStreamPlayer2D.SignalName.Finished);
+        QueueFree();
+    }
+
     #region Child
 
     [ExportGroup("ChildDontChange")]
@@ -55,6 +60,7 @@ public partial class Bomb : Node2D
     public RigidBody2D RigidBody { get; set; } = null!;
 
     [Export] public AnimationPlayer AnimationPlayer { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D BoomSFX { get; set; } = null!;
 
     #endregion
 }
