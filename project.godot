@@ -41,16 +41,6 @@ enabled=PackedStringArray("res://addons/scene_translation/plugin.cfg")
 
 theme/custom="res://assets/vfx/default_theme.tres"
 
-[importer_defaults]
-
-oggvorbisstr={
-"bar_beats": 4,
-"beat_count": 0,
-"bpm": 0,
-"loop": true,
-"loop_offset": 0
-}
-
 [layer_names]
 
 2d_physics/layer_1="Env"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doau1ryxwtxm3"
+path="res://.godot/imported/Retro Roar LoFi 01.wav-ba7258e240d26cbf084b452f394497e0.sample"
+
+[deps]
+
+source_file="res://scenes/levels/base/slingshot/Retro Roar LoFi 01.wav"
+dest_files=["res://.godot/imported/Retro Roar LoFi 01.wav-ba7258e240d26cbf084b452f394497e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwjpro84w4uau"
+path="res://.godot/imported/Retro Charge Off 11.wav-38091309219fb3140cfcbd7db37bddf6.sample"
+
+[deps]
+
+source_file="res://ui/popups/level_fail/Retro Charge Off 11.wav"
+dest_files=["res://.godot/imported/Retro Charge Off 11.wav-38091309219fb3140cfcbd7db37bddf6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

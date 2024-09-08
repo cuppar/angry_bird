@@ -17,6 +17,18 @@ public partial class Slingshot : Node2D
     private PackedScene _birdPrefab = null!;
     private PackedScene _trajectoryPointPrefab = null!;
 
+    #region 是否接近拉满弓
+
+    private bool _isBigPowerInLastFrame;
+    private const float Factor = 0.8f;
+
+    private bool IsBigPower(float distance)
+    {
+        return distance > MaxRadius * Factor;
+    }
+
+    #endregion
+
     private bool _dragging;
     [Export] public float MaxForce = 1500;
     [Export] public float MaxRadius = 150;
@@ -45,16 +57,16 @@ public partial class Slingshot : Node2D
         base._UnhandledInput(@event);
         if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left } eventMouseButton)
         {
+            // mouse down
             if (eventMouseButton.IsPressed())
             {
                 if (!BirdInSlingshot.IsMouseHover)
                     return;
-                // GD.Print("mouse down");
                 _dragging = true;
             }
+            // mouse up
             else if (eventMouseButton.IsReleased() && _dragging)
             {
-                // GD.Print("mouse up");
                 _dragging = false;
                 var bird = _birdPrefab.Instantiate<Bird>();
                 bird.InitImpulse = GetShootInitImpulse();
@@ -65,9 +77,10 @@ public partial class Slingshot : Node2D
             }
         }
 
+        // dragging
         if (@event is InputEventMouseMotion eventMouseMotion && _dragging)
         {
-            // GD.Print("dragging");
+            // 改变弹弓上小鸟位置
             var mousePos = eventMouseMotion.Position - GlobalPosition;
             var distance = mousePos.Length();
 
@@ -82,10 +95,28 @@ public partial class Slingshot : Node2D
                 BirdInSlingshot.Position = -direction * MaxRadius;
             }
 
+            // 简单模式显示轨迹
             if (Game.CurrentMode == Game.Mode.Easy)
                 DrawTrajectory(BirdInSlingshot.GlobalPosition);
+
+            // 满弓音效
+            if (IsBigPower(distance))
+            {
+                if (!_isBigPowerInLastFrame)
+                {
+                    // todo 播放满弓音效
+                    GD.Print($"满弓");
+                }
+
+                _isBigPowerInLastFrame = true;
+            }
+            else
+            {
+                _isBigPowerInLastFrame = false;
+            }
         }
     }
+
 
     private Vector2 GetShootInitImpulse()
     {
