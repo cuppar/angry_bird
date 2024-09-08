@@ -1,3 +1,4 @@
+using AngryBird.Constants;
 using Godot;
 
 namespace AngryBird.Autoloads;
@@ -34,18 +35,18 @@ public partial class SoundManager : Node
         switch (node)
         {
             case TextureButton textureButton:
-                textureButton.Pressed += () => PlaySFX("UIPress");
-                textureButton.FocusEntered += () => PlaySFX("UIFocus");
+                textureButton.Pressed += () => PlaySFX(SFXNames.UIPress);
+                textureButton.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
                 textureButton.MouseEntered += textureButton.GrabFocus;
                 break;
             case Button button:
-                button.Pressed += () => PlaySFX("UIPress");
-                button.FocusEntered += () => PlaySFX("UIFocus");
+                button.Pressed += () => PlaySFX(SFXNames.UIPress);
+                button.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
                 button.MouseEntered += button.GrabFocus;
                 break;
             case Slider slider:
-                slider.ValueChanged += _ => PlaySFX("UIPress");
-                slider.FocusEntered += () => PlaySFX("UIFocus");
+                slider.ValueChanged += _ => PlaySFX(SFXNames.UIPress);
+                slider.FocusEntered += () => PlaySFX(SFXNames.UIFocus);
                 slider.MouseEntered += slider.GrabFocus;
                 break;
         }

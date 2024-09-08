@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://doau1ryxwtxm3"
-path="res://.godot/imported/Retro Roar LoFi 01.wav-ba7258e240d26cbf084b452f394497e0.sample"
+path="res://.godot/imported/SlingshotBigPower.wav-b42cf631e943b0b0ff09f239f74093a4.sample"
 
 [deps]
 
-source_file="res://scenes/levels/base/slingshot/Retro Roar LoFi 01.wav"
-dest_files=["res://.godot/imported/Retro Roar LoFi 01.wav-ba7258e240d26cbf084b452f394497e0.sample"]
+source_file="res://scenes/levels/base/slingshot/SlingshotBigPower.wav"
+dest_files=["res://.godot/imported/SlingshotBigPower.wav-b42cf631e943b0b0ff09f239f74093a4.sample"]
 
 [params]
 
