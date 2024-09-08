@@ -19,7 +19,7 @@
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup", "ShotBirdContainer")]
 script = ExtResource("1_xx553")
-LiveLeft = 1
+LiveLeft = 6
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Background/Edges/LeftLimit")
@@ -79,65 +79,113 @@ RightLimit = NodePath("../Background/Edges/RightLimit")
 [node name="Platform" type="Node2D" parent="Items"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Items/Platform"]
-tile_map_data = PackedByteArray("AAALAAYAAAAHAAEAAAAMAAYAAAACAAAAAAANAAYAAAACAAAAAAAOAAYAAAAIAAEAAAARAAQAAAAHAAEAAAASAAQAAAACAAAAAAATAAQAAAAIAAEAAAAGAAgAAAAHAAEAAAAHAAgAAAACAAAAAAAIAAgAAAAIAAEAAAA=")
+tile_map_data = PackedByteArray("AAAFAAIAAAAHAAEAAAAGAAIAAAACAAAAAAAHAAIAAAAIAAEAAAARAAIAAAAHAAEAAAASAAIAAAACAAAAAAATAAIAAAAIAAEAAAA=")
 tile_set = ExtResource("14_b2g71")
 
 [node name="IronBlocks" type="Node2D" parent="Items"]
 
 [node name="IronBlock" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(774, 352)
+position = Vector2(659, 628)
 
 [node name="IronBlock2" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(775, 298)
+position = Vector2(659, 588)
 
 [node name="IronBlock3" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(774, 241)
+position = Vector2(659, 548)
+
+[node name="IronBlock4" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(659, 508)
+
+[node name="IronBlock5" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(955, 628)
+
+[node name="IronBlock6" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(955, 588)
+
+[node name="IronBlock7" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(955, 548)
+
+[node name="IronBlock8" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(955, 508)
 
 [node name="Boards" type="Node2D" parent="Items"]
 
 [node name="Board" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1349, 573)
-rotation = 1.57079
+position = Vector2(726, 580)
+rotation = 4.71238
 
-[node name="Board2" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1442, 574)
-rotation = 1.57079
+[node name="Board4" parent="Items/Boards" instance=ExtResource("10_hiabj")]
+position = Vector2(878, 580)
+rotation = 4.71238
 
-[node name="Board3" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1398, 482)
-rotation = 3.14159
+[node name="Board5" parent="Items/Boards" instance=ExtResource("10_hiabj")]
+position = Vector2(798, 494)
+rotation = 6.28317
 
 [node name="Glasses" type="Node2D" parent="Items"]
 
 [node name="Glass" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1692, 579)
+position = Vector2(659, 447)
 
-[node name="Glass2" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1693, 501)
+[node name="Glass4" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(659, 367)
 
-[node name="Glass3" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1693, 423)
+[node name="Glass5" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(955, 447)
+
+[node name="Glass6" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(955, 367)
 
 [node name="Bomb" type="Node2D" parent="Items"]
 
 [node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
-position = Vector2(1833, 527)
+position = Vector2(802, 597)
 
 [node name="ScoreItems" type="Node2D" parent="Items"]
 
 [node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(422, 343)
+position = Vector2(655, 149)
 
-[node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(484, 343)
+[node name="ScoreItem4" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(727, 149)
 
-[node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(551, 343)
+[node name="ScoreItem5" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(799, 149)
+
+[node name="ScoreItem6" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(871, 149)
+
+[node name="ScoreItem7" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(943, 149)
+
+[node name="ScoreItem8" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(415, 277)
+scale = Vector2(2, 2)
+SizeScale = 2.0
+Score = 500
+
+[node name="ScoreItem9" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(1191, 277)
+scale = Vector2(2, 2)
+SizeScale = 2.0
+Score = 500
 
 [node name="Pigs" type="Node2D" parent="Items"]
 
 [node name="Pig" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(449, 466)
+position = Vector2(1042, 608)
+
+[node name="Pig5" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(562, 608)
+
+[node name="Pig3" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(418, 88)
+
+[node name="Pig4" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(1194, 88)
+
+[node name="Pig2" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(802, 438)
 
 [node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
 position = Vector2(223, 463)

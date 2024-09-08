@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="angry_bird"
-run/main_scene="res://scenes/levels/base/level.tscn"
+run/main_scene="res://ui/title_screen/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -50,7 +50,6 @@ theme/custom="res://assets/vfx/default_theme.tres"
 [physics]
 
 2d/default_linear_damp=0.0
-2d/default_angular_damp=0.0
 
 [rendering]
 
