@@ -1,4 +1,5 @@
 using AngryBird.Autoloads;
+using AngryBird.Constants;
 using Godot;
 
 namespace AngryBird.UI;
@@ -18,15 +19,14 @@ public partial class LevelFailPanel : Control
         AutoloadManager.SoundManager.SetupUISounds(this);
         MainMenuButton.Close += OnClose;
         ReplayButton.Close += OnClose;
-        VisibilityChanged+=OnVisibilityChanged;
+        VisibilityChanged += OnVisibilityChanged;
     }
 
     private void OnVisibilityChanged()
     {
         if (Visible && IsVisibleInTree())
         {
-            // todo 失败音效
-            GD.Print($"失败音效");
+            AutoloadManager.SoundManager.PlaySFX(SFXNames.LevelFail);
         }
     }
 

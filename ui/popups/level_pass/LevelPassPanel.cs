@@ -1,4 +1,5 @@
 using AngryBird.Autoloads;
+using AngryBird.Constants;
 using AngryBird.Globals;
 using Godot;
 
@@ -27,8 +28,7 @@ public partial class LevelPassPanel : Control
     {
         if (Visible && IsVisibleInTree())
         {
-            // todo 过关音效
-            GD.Print($"过关音效");
+            AutoloadManager.SoundManager.PlaySFX(SFXNames.LevelPass);
             ScoreLabel.Text = $"得分：{Game.CurrentLevel.Score}, 剩余 {Game.CurrentLevel.LiveLeft} 次机会";
             FinalScoreLabel.Text = $"最终得分：{Game.CurrentLevel.Score * (Game.CurrentLevel.LiveLeft + 1)}";
         }
