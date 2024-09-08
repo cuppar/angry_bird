@@ -31,14 +31,14 @@ public partial class Pig : Node2D
         RigidBody.QueueFree();
         Game.CurrentLevel.Score += Score;
         AnimationPlayer.Play("die");
-        // todo 猪死音效
-        GD.Print($"猪死亡音效");
+        DieSFX.Play();
         CleanUp();
     }
 
     private async void CleanUp()
     {
         await ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
+        await ToSignal(DieSFX, AudioStreamPlayer2D.SignalName.Finished);
         QueueFree();
     }
 
@@ -62,6 +62,7 @@ public partial class Pig : Node2D
     [Export] public CollisionShape2D CollisionShape { get; set; } = null!;
     [Export] public Label ScoreLabel { get; set; } = null!;
     [Export] public RigidBody2D RigidBody { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D DieSFX { get; set; } = null!;
 
     #endregion
 }
