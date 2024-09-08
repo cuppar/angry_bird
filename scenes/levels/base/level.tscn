@@ -126,16 +126,13 @@ position = Vector2(1833, 527)
 [node name="ScoreItems" type="Node2D" parent="Items"]
 
 [node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1341, 393)
-Score = 200
+position = Vector2(422, 343)
 
 [node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1403, 393)
-Score = 200
+position = Vector2(484, 343)
 
 [node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1470, 393)
-Score = 200
+position = Vector2(551, 343)
 
 [node name="Pigs" type="Node2D" parent="Items"]
 

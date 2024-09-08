@@ -47,9 +47,27 @@ public partial class ScoreItem : Node2D, ISerializationListener
     {
         Game.CurrentLevel.Score += Score;
         AnimationPlayer.Play("die");
-        // todo 播放得分音效
-        GD.Print($"得分音效");
+        DieSFX.Play();
+        CleanUpAsync();
     }
+
+    private async void CleanUpAsync()
+    {
+        await Task.WhenAll(AnimationCompleteAsync(), SFXCompleteAsync());
+        QueueFree();
+        return;
+
+        async Task SFXCompleteAsync()
+        {
+            await ToSignal(DieSFX, AudioStreamPlayer2D.SignalName.Finished);
+        }
+
+        async Task AnimationCompleteAsync()
+        {
+            await ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
+        }
+    }
+
 
     #region SizeScale
 
@@ -99,6 +117,7 @@ public partial class ScoreItem : Node2D, ISerializationListener
 
     [Export] public Label ScoreLabel { get; set; } = null!;
     [Export] public Area2D ItemArea { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D DieSFX { get; set; } = null!;
 
     #endregion
 }
