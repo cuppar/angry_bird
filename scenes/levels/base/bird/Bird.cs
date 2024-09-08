@@ -26,8 +26,7 @@ public partial class Bird : RigidBody2D
         var isPlatform = (bool)data.GetCustomData("IsPlatform");
         if (isPlatform)
         {
-            // todo 平台碰撞音效
-            GD.Print($"平台碰撞音效");
+            ImpactPlatformSFX.Play();
         }
     }
 
@@ -39,8 +38,7 @@ public partial class Bird : RigidBody2D
             state.ApplyImpulse(InitImpulse);
             Rotation = InitImpulse.Angle();
             _isFly = true;
-            // todo 播放起飞音效
-            GD.Print($"起飞音效");
+            FlySFX.Play();
         }
     }
 
@@ -61,6 +59,8 @@ public partial class Bird : RigidBody2D
 
     [Export] public Marker2D RightLimit = null!;
     [Export] public Sprite2D Sprite = null!;
+    [Export] public AudioStreamPlayer2D ImpactPlatformSFX { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D FlySFX { get; set; } = null!;
 
     #endregion
 }

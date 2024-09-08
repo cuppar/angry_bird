@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://l4cngyuko0oj"]
+[gd_scene load_steps=7 format=3 uid="uid://l4cngyuko0oj"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/bird/Bird.cs" id="1_lf6jc"]
 [ext_resource type="Texture2D" uid="uid://cxkrj14jia1ul" path="res://assets/vfx/charactor.png" id="2_nvkha"]
+[ext_resource type="AudioStream" uid="uid://0v5m3uiowhsv" path="res://scenes/levels/tileset/hit_platform.ogg" id="3_bm8fk"]
+[ext_resource type="AudioStream" uid="uid://70lsknfp25hh" path="res://scenes/levels/base/bird/fly.wav" id="4_d8eb8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ss6r"]
 bounce = 0.6
@@ -9,11 +11,13 @@ bounce = 0.6
 [sub_resource type="CircleShape2D" id="CircleShape2D_imd1t"]
 radius = 20.0
 
-[node name="Bird" type="RigidBody2D" node_paths=PackedStringArray("Sprite")]
+[node name="Bird" type="RigidBody2D" node_paths=PackedStringArray("Sprite", "ImpactPlatformSFX", "FlySFX")]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_3ss6r")
 script = ExtResource("1_lf6jc")
 Sprite = NodePath("Sprite2D")
+ImpactPlatformSFX = NodePath("SFX/ImpactPlatformSFX")
+FlySFX = NodePath("SFX/FlySFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_imd1t")
@@ -24,3 +28,14 @@ scale = Vector2(0.64, 0.64)
 texture = ExtResource("2_nvkha")
 region_enabled = true
 region_rect = Rect2(113, 132, 77, 70)
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="ImpactPlatformSFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_bm8fk")
+bus = &"SFX"
+
+[node name="FlySFX" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_d8eb8")
+volume_db = 10.0
+bus = &"SFX"

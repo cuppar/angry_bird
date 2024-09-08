@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5jysu8uq0ho7"]
+[gd_scene load_steps=5 format=3 uid="uid://b5jysu8uq0ho7"]
 
 [ext_resource type="Texture2D" uid="uid://bi4e5h1n82dun" path="res://ui/game_pass_screen/BUBBLES_CLEANUP.webp" id="1_cba7y"]
 [ext_resource type="PackedScene" uid="uid://16uextivjcc2" path="res://ui/popups/main_menu_button.tscn" id="1_ha668"]
 [ext_resource type="Texture2D" uid="uid://c7fc10d2cl1bs" path="res://ui/game_pass_screen/BACKGROUNDS_GE_1.webp" id="1_mnaox"]
+[ext_resource type="AudioStream" uid="uid://dpwlurfxy3ugl" path="res://ui/game_pass_screen/win.wav" id="4_18lda"]
 
 [node name="GamePassScreen" type="Control"]
 layout_mode = 3
@@ -49,3 +50,8 @@ offset_top = -336.0
 offset_right = 207.0
 offset_bottom = -176.0
 grow_vertical = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_18lda")
+autoplay = true
+bus = &"SFX"
