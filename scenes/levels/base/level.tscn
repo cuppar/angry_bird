@@ -22,11 +22,11 @@ script = ExtResource("1_xx553")
 LiveLeft = 10
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
-LeftLimit = NodePath("Edges/LeftLimit")
-RightLimit = NodePath("Edges/RightLimit")
-LiveUI = NodePath("Live")
-LevelPassPopup = NodePath("Popups/LevelPassPopup")
-LevelFailPopup = NodePath("Popups/LevelFailPopup")
+LeftLimit = NodePath("Background/Edges/LeftLimit")
+RightLimit = NodePath("Background/Edges/RightLimit")
+LiveUI = NodePath("UI/Live")
+LevelPassPopup = NodePath("UI/Popups/LevelPassPopup")
+LevelFailPopup = NodePath("UI/Popups/LevelFailPopup")
 ShotBirdContainer = NodePath("ShotBirdContainer")
 metadata/_edit_lock_ = true
 
@@ -42,55 +42,45 @@ position = Vector2(1296, 324)
 scale = Vector2(1.26563, 1.26563)
 texture = ExtResource("2_x0bsa")
 
-[node name="Edges" type="Node2D" parent="."]
+[node name="Edges" type="Node2D" parent="Background"]
 
-[node name="Floor" type="StaticBody2D" parent="Edges"]
+[node name="Floor" type="StaticBody2D" parent="Background/Edges"]
 position = Vector2(0, 648)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Edges/Floor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Edges/Floor"]
 shape = SubResource("WorldBoundaryShape2D_rxmki")
 
-[node name="LeftLimit" type="Marker2D" parent="Edges"]
+[node name="LeftLimit" type="Marker2D" parent="Background/Edges"]
 position = Vector2(0, -265)
 gizmo_extents = 2000.0
 
-[node name="RightLimit" type="Marker2D" parent="Edges"]
+[node name="RightLimit" type="Marker2D" parent="Background/Edges"]
 position = Vector2(1344, -257)
 gizmo_extents = 2000.0
 
-[node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
-position = Vector2(223, 463)
-metadata/_edit_lock_ = true
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Live" parent="UI" instance=ExtResource("5_fveh0")]
+
+[node name="Popups" type="Node2D" parent="UI"]
+
+[node name="LevelPassPopup" parent="UI/Popups" instance=ExtResource("6_hoyur")]
+visible = false
+
+[node name="LevelFailPopup" parent="UI/Popups" instance=ExtResource("7_62sp1")]
+visible = false
 
 [node name="Camera" parent="." node_paths=PackedStringArray("LeftLimit", "RightLimit") instance=ExtResource("3_m2yvg")]
-LeftLimit = NodePath("../Edges/LeftLimit")
-RightLimit = NodePath("../Edges/RightLimit")
-
-[node name="Live" parent="." instance=ExtResource("5_fveh0")]
-
-[node name="Popups" type="Node2D" parent="."]
-
-[node name="LevelPassPopup" parent="Popups" instance=ExtResource("6_hoyur")]
-visible = false
-
-[node name="LevelFailPopup" parent="Popups" instance=ExtResource("7_62sp1")]
-visible = false
+LeftLimit = NodePath("../Background/Edges/LeftLimit")
+RightLimit = NodePath("../Background/Edges/RightLimit")
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="ScoreItems" type="Node2D" parent="Items"]
+[node name="Platform" type="Node2D" parent="Items"]
 
-[node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1366, 397)
-Score = 200
-
-[node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1428, 397)
-Score = 200
-
-[node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
-position = Vector2(1495, 397)
-Score = 200
+[node name="TileMapLayer" type="TileMapLayer" parent="Items/Platform"]
+tile_map_data = PackedByteArray("AAALAAYAAAAHAAEAAAAMAAYAAAACAAAAAAANAAYAAAACAAAAAAAOAAYAAAAIAAEAAAARAAQAAAAHAAEAAAASAAQAAAACAAAAAAATAAQAAAAIAAEAAAAGAAgAAAAHAAEAAAAHAAgAAAACAAAAAAAIAAgAAAAIAAEAAAA=")
+tile_set = ExtResource("14_b2g71")
 
 [node name="IronBlocks" type="Node2D" parent="Items"]
 
@@ -133,21 +123,33 @@ position = Vector2(1254, 40)
 [node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
 position = Vector2(768, 327)
 
-[node name="Platform" type="Node2D" parent="Items"]
+[node name="ScoreItems" type="Node2D" parent="Items"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Items/Platform"]
-tile_map_data = PackedByteArray("AAALAAYAAAAHAAEAAAAMAAYAAAACAAAAAAANAAYAAAACAAAAAAAOAAYAAAAIAAEAAAARAAQAAAAHAAEAAAASAAQAAAACAAAAAAATAAQAAAAIAAEAAAAGAAgAAAAHAAEAAAAHAAgAAAACAAAAAAAIAAgAAAAIAAEAAAA=")
-tile_set = ExtResource("14_b2g71")
+[node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(1341, 393)
+Score = 200
+
+[node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(1403, 393)
+Score = 200
+
+[node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(1470, 393)
+Score = 200
 
 [node name="Pigs" type="Node2D" parent="Items"]
 
 [node name="Pig4" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(480, 472)
+position = Vector2(465, 470)
 
 [node name="Pig5" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(1604, 602)
+position = Vector2(1555, 577)
 
 [node name="Pig8" parent="Items/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(4862, 600)
+
+[node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
+position = Vector2(223, 463)
+metadata/_edit_lock_ = true
 
 [node name="ShotBirdContainer" type="Node2D" parent="."]
