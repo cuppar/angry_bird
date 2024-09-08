@@ -19,7 +19,7 @@
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup")]
 script = ExtResource("1_xx553")
-LiveLeft = 10
+LiveLeft = 1
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Edges/LeftLimit")
