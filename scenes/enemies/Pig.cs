@@ -29,6 +29,8 @@ public partial class Pig : RigidBody2D
     {
         Game.CurrentLevel.Score += Score;
         AnimationPlayer.Play("die");
+        // todo 猪死音效
+        GD.Print($"猪死亡音效");
     }
 
     private void OnBodyEntered(Node2D body)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dweh1f0cgi0l1"]
+[gd_scene load_steps=16 format=4 uid="uid://dweh1f0cgi0l1"]
 
 [ext_resource type="Script" path="res://scenes/levels/base/Level.cs" id="1_xx553"]
 [ext_resource type="Texture2D" uid="uid://dkmsloar8xtui" path="res://scenes/levels/base/assets/sky.webp" id="2_x0bsa"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://pkv14awby4fk" path="res://scenes/levels/base/slingshot/slingshot.tscn" id="5_psx3v"]
 [ext_resource type="PackedScene" uid="uid://3l80fx0ccnq4" path="res://ui/popups/level_pass/level_pass_popup.tscn" id="6_hoyur"]
 [ext_resource type="PackedScene" uid="uid://daodhlmc4ig46" path="res://ui/popups/level_fail/level_fail_popup.tscn" id="7_62sp1"]
+[ext_resource type="PackedScene" uid="uid://dwjpuuh28oflq" path="res://scenes/items/score_item/score_item.tscn" id="8_epap7"]
+[ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="9_aiye8"]
+[ext_resource type="PackedScene" uid="uid://cs2ved2fwim8e" path="res://scenes/items/glass/glass.tscn" id="10_8hw4h"]
+[ext_resource type="PackedScene" uid="uid://dxkkb484m5v1n" path="res://scenes/items/board/board.tscn" id="10_hiabj"]
+[ext_resource type="PackedScene" uid="uid://bq5xd2vwun3t5" path="res://scenes/items/bomb/bomb.tscn" id="12_lkdxw"]
 [ext_resource type="TileSet" uid="uid://dahru26a1744w" path="res://scenes/levels/tileset/map_tile_set.tres" id="14_b2g71"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rxmki"]
@@ -74,13 +79,58 @@ visible = false
 
 [node name="ScoreItems" type="Node2D" parent="Items"]
 
+[node name="ScoreItem" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(440, 296)
+Score = 200
+
+[node name="ScoreItem2" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(502, 296)
+Score = 200
+
+[node name="ScoreItem3" parent="Items/ScoreItems" instance=ExtResource("8_epap7")]
+position = Vector2(569, 296)
+Score = 200
+
 [node name="IronBlocks" type="Node2D" parent="Items"]
+
+[node name="IronBlock" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(1157, 218)
+
+[node name="IronBlock2" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(1158, 164)
+
+[node name="IronBlock3" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
+position = Vector2(1157, 107)
 
 [node name="Boards" type="Node2D" parent="Items"]
 
+[node name="Board" parent="Items/Boards" instance=ExtResource("10_hiabj")]
+position = Vector2(1210, 567)
+rotation = 1.57079
+
+[node name="Board2" parent="Items/Boards" instance=ExtResource("10_hiabj")]
+position = Vector2(1303, 568)
+rotation = 1.57079
+
+[node name="Board3" parent="Items/Boards" instance=ExtResource("10_hiabj")]
+position = Vector2(1259, 476)
+rotation = 3.14159
+
 [node name="Glasses" type="Node2D" parent="Items"]
 
+[node name="Glass" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(1253, 196)
+
+[node name="Glass2" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(1254, 118)
+
+[node name="Glass3" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
+position = Vector2(1254, 40)
+
 [node name="Bomb" type="Node2D" parent="Items"]
+
+[node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
+position = Vector2(779, 334)
 
 [node name="Platform" type="Node2D" parent="Items"]
 

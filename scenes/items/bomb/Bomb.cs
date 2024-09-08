@@ -32,6 +32,8 @@ public partial class Bomb : Node2D
         RigidBody.QueueFree();
         AnimationPlayer.Play("boom");
         Game.ShakeCamera(20);
+        // todo 爆炸音效
+        GD.Print($"爆炸音效");
 
         _bombFragmentPrefab ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.BombFragment);
         for (var i = 0; i < FragmentCount; i++)

@@ -42,6 +42,8 @@ public partial class Glass : Node2D
         var breakPos = RigidBody.GlobalPosition;
         RigidBody.QueueFree();
         _glassFragmentPackedScene ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.GlassFragment);
+        // todo 玻璃音效
+        GD.Print($"玻璃音效");
         for (var i = 0; i < FragmentCount; i++)
         {
             var glassFragment = _glassFragmentPackedScene.Instantiate<GlassFragment>();

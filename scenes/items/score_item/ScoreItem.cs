@@ -47,6 +47,8 @@ public partial class ScoreItem : Node2D, ISerializationListener
     {
         Game.CurrentLevel.Score += Score;
         AnimationPlayer.Play("die");
+        // todo 播放得分音效
+        GD.Print($"得分音效");
     }
 
     #region SizeScale

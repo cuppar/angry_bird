@@ -27,11 +27,15 @@ public partial class Board : RigidBody2D
         switch (HitCount)
         {
             case 1:
+                // todo 木板音效1
+                GD.Print($"木板音效1");
                 Game.CurrentLevel.Score += ScoreFirstHit;
                 OriginSprite.Hide();
                 HitSprite.Show();
                 break;
             case 2:
+                // todo 木板音效2
+                GD.Print($"木板音效2");
                 Game.CurrentLevel.Score += ScoreSecondHit;
                 QueueFree();
                 break;

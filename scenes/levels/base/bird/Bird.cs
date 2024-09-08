@@ -7,6 +7,30 @@ public partial class Bird : RigidBody2D
     private bool _isFly;
     [Export] public Vector2 InitImpulse = new(1000, -1000);
 
+
+    public override void _Ready()
+    {
+        base._Ready();
+        MaxContactsReported = 8;
+        ContactMonitor = true;
+        BodyShapeEntered += OnBodyShapeEntered;
+    }
+
+    private void OnBodyShapeEntered(Rid bodyRid, Node body, long bodyShapeIndex, long localShapeIndex)
+    {
+        if (body is not TileMapLayer tileMapLayer) return;
+        var coords = tileMapLayer.GetCoordsForBodyRid(bodyRid);
+        GD.Print($"coords: {coords}");
+        var data = tileMapLayer.GetCellTileData(coords);
+        if (data is null) return;
+        var isPlatform = (bool)data.GetCustomData("IsPlatform");
+        if (isPlatform)
+        {
+            // todo 平台碰撞音效
+            GD.Print($"平台碰撞音效");
+        }
+    }
+
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)
     {
         base._IntegrateForces(state);
@@ -15,6 +39,8 @@ public partial class Bird : RigidBody2D
             state.ApplyImpulse(InitImpulse);
             Rotation = InitImpulse.Angle();
             _isFly = true;
+            // todo 播放起飞音效
+            GD.Print($"起飞音效");
         }
     }
 

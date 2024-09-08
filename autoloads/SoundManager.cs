@@ -5,6 +5,7 @@ namespace AngryBird.Autoloads;
 
 public partial class SoundManager : Node
 {
+    // todo 修改所有音效文件名
     public override void _Ready()
     {
         base._Ready();
