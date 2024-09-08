@@ -19,7 +19,7 @@
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("Slingshot", "Camera", "LeftLimit", "RightLimit", "LiveUI", "LevelPassPopup", "LevelFailPopup")]
 script = ExtResource("1_xx553")
-LiveLeft = 1
+LiveLeft = 10
 Slingshot = NodePath("Slingshot")
 Camera = NodePath("Camera")
 LeftLimit = NodePath("Edges/LeftLimit")
@@ -105,15 +105,15 @@ position = Vector2(1157, 107)
 [node name="Boards" type="Node2D" parent="Items"]
 
 [node name="Board" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1210, 567)
+position = Vector2(747, 310)
 rotation = 1.57079
 
 [node name="Board2" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1303, 568)
+position = Vector2(840, 311)
 rotation = 1.57079
 
 [node name="Board3" parent="Items/Boards" instance=ExtResource("10_hiabj")]
-position = Vector2(1259, 476)
+position = Vector2(796, 219)
 rotation = 3.14159
 
 [node name="Glasses" type="Node2D" parent="Items"]
@@ -130,7 +130,7 @@ position = Vector2(1254, 40)
 [node name="Bomb" type="Node2D" parent="Items"]
 
 [node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
-position = Vector2(779, 334)
+position = Vector2(1464, 527)
 
 [node name="Platform" type="Node2D" parent="Items"]
 
@@ -142,3 +142,6 @@ tile_set = ExtResource("14_b2g71")
 
 [node name="Pig4" parent="Items/Pigs" instance=ExtResource("5_177sq")]
 position = Vector2(480, 472)
+
+[node name="Pig5" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(1604, 602)

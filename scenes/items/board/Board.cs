@@ -3,7 +3,7 @@ using Godot;
 
 namespace AngryBird;
 
-public partial class Board : RigidBody2D
+public partial class Board : Node2D
 {
     private const int ScoreFirstHit = 50;
     private const int ScoreSecondHit = 100;
@@ -12,9 +12,9 @@ public partial class Board : RigidBody2D
     public override void _Ready()
     {
         base._Ready();
-        ContactMonitor = true;
-        MaxContactsReported = 8;
-        BodyEntered += OnBodyEntered;
+        RigidBody.ContactMonitor = true;
+        RigidBody.MaxContactsReported = 8;
+        RigidBody.BodyEntered += OnBodyEntered;
         OriginSprite.Show();
         HitSprite.Hide();
     }
@@ -27,19 +27,24 @@ public partial class Board : RigidBody2D
         switch (HitCount)
         {
             case 1:
-                // todo 木板音效1
-                GD.Print($"木板音效1");
+                Break01SFX.Play();
                 Game.CurrentLevel.Score += ScoreFirstHit;
                 OriginSprite.Hide();
                 HitSprite.Show();
                 break;
             case 2:
-                // todo 木板音效2
-                GD.Print($"木板音效2");
+                Break02SFX.Play();
                 Game.CurrentLevel.Score += ScoreSecondHit;
-                QueueFree();
+                Die();
                 break;
         }
+    }
+
+    private async void Die()
+    {
+        RigidBody.QueueFree();
+        await ToSignal(Break02SFX, AudioStreamPlayer2D.SignalName.Finished);
+        QueueFree();
     }
 
     #region Child
@@ -49,6 +54,9 @@ public partial class Board : RigidBody2D
     public Sprite2D OriginSprite { get; set; } = null!;
 
     [Export] public Sprite2D HitSprite { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D Break01SFX { get; set; } = null!;
+    [Export] public AudioStreamPlayer2D Break02SFX { get; set; } = null!;
+    [Export] public RigidBody2D RigidBody { get; set; } = null!;
 
     #endregion
 }

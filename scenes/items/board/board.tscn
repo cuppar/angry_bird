@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxkkb484m5v1n"]
+[gd_scene load_steps=7 format=3 uid="uid://dxkkb484m5v1n"]
 
 [ext_resource type="Script" path="res://scenes/items/board/Board.cs" id="1_qsw8d"]
 [ext_resource type="Texture2D" uid="uid://bbro0she5ewb1" path="res://scenes/items/board/board.png" id="2_od43c"]
+[ext_resource type="AudioStream" uid="uid://c2k1aqpeoyqee" path="res://scenes/items/board/break01.ogg" id="3_86xku"]
+[ext_resource type="AudioStream" uid="uid://dycda1p0ilego" path="res://scenes/items/board/break02.wav" id="4_6bqnk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0t88u"]
 friction = 2.0
@@ -10,25 +12,42 @@ rough = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mf383"]
 size = Vector2(134, 38)
 
-[node name="Board" type="RigidBody2D" node_paths=PackedStringArray("OriginSprite", "HitSprite")]
+[node name="Board" type="Node2D" node_paths=PackedStringArray("OriginSprite", "HitSprite", "Break01SFX", "Break02SFX", "RigidBody")]
+script = ExtResource("1_qsw8d")
+OriginSprite = NodePath("RigidBody2D/Origin")
+HitSprite = NodePath("RigidBody2D/Hit")
+Break01SFX = NodePath("SFX/Break01")
+Break02SFX = NodePath("SFX/Break02")
+RigidBody = NodePath("RigidBody2D")
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Break01" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_86xku")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Break02" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_6bqnk")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 modulate = Color(0.717237, 0.295901, 0, 1)
 collision_mask = 7
 mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_0t88u")
-script = ExtResource("1_qsw8d")
-OriginSprite = NodePath("Origin")
-HitSprite = NodePath("Hit")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_mf383")
 
-[node name="Origin" type="Sprite2D" parent="."]
+[node name="Origin" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(1.71795, 1)
 texture = ExtResource("2_od43c")
 region_enabled = true
 region_rect = Rect2(317, 78, 78, 40)
 
-[node name="Hit" type="Sprite2D" parent="."]
+[node name="Hit" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(1.71795, 1)
 texture = ExtResource("2_od43c")
 region_enabled = true
