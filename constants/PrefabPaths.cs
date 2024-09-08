@@ -6,7 +6,7 @@ public static class PrefabPaths
 
     public static class Character
     {
-        public const string Bird = "res://scenes/levels/base/bird.tscn";
+        public const string Bird = "res://scenes/levels/base/bird/bird.tscn";
         public const string GlassFragment = "res://scenes/items/glass/glass_fragment.tscn";
         public const string BombFragment = "res://scenes/items/bomb/bomb_fragment.tscn";
     }

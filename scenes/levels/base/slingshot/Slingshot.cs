@@ -1,3 +1,4 @@
+using AngryBird.Autoloads;
 using AngryBird.Constants;
 using AngryBird.Globals;
 using Godot;
@@ -104,8 +105,7 @@ public partial class Slingshot : Node2D
             {
                 if (!_isBigPowerInLastFrame)
                 {
-                    // todo 播放满弓音效
-                    GD.Print($"满弓");
+                    AutoloadManager.SoundManager.PlaySFX(SFXNames.SlingshotBigPower);
                 }
 
                 _isBigPowerInLastFrame = true;
