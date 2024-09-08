@@ -139,14 +139,14 @@ Score = 200
 
 [node name="Pigs" type="Node2D" parent="Items"]
 
-[node name="Pig4" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(465, 470)
+[node name="Pig" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(449, 466)
 
-[node name="Pig5" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(1555, 577)
+[node name="Pig2" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(893, 333)
 
-[node name="Pig8" parent="Items/Pigs" instance=ExtResource("5_177sq")]
-position = Vector2(4862, 600)
+[node name="Pig3" parent="Items/Pigs" instance=ExtResource("5_177sq")]
+position = Vector2(1157, 207)
 
 [node name="Slingshot" parent="." instance=ExtResource("5_psx3v")]
 position = Vector2(223, 463)

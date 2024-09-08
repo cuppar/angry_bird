@@ -42,7 +42,7 @@ public partial class Level : Node2D
         var birdOutOfScreen = !_shotBird.IsOnScreen();
 
         // pigs
-        if (GetTree().GetNodesInGroup(Groups.Pigs).Any(p => !((Pig)p).IsSleeping()))
+        if (GetTree().GetNodesInGroup(Groups.Pigs).Any(p => !((RigidBody2D)p).IsSleeping()))
             return false;
 
         // bird
