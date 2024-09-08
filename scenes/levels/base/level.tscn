@@ -85,13 +85,13 @@ tile_set = ExtResource("14_b2g71")
 [node name="IronBlocks" type="Node2D" parent="Items"]
 
 [node name="IronBlock" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(1157, 218)
+position = Vector2(774, 352)
 
 [node name="IronBlock2" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(1158, 164)
+position = Vector2(775, 298)
 
 [node name="IronBlock3" parent="Items/IronBlocks" instance=ExtResource("9_aiye8")]
-position = Vector2(1157, 107)
+position = Vector2(774, 241)
 
 [node name="Boards" type="Node2D" parent="Items"]
 
@@ -110,13 +110,13 @@ rotation = 3.14159
 [node name="Glasses" type="Node2D" parent="Items"]
 
 [node name="Glass" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(774, 332)
+position = Vector2(1692, 579)
 
 [node name="Glass2" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(775, 254)
+position = Vector2(1693, 501)
 
 [node name="Glass3" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(775, 176)
+position = Vector2(1693, 423)
 
 [node name="Bomb" type="Node2D" parent="Items"]
 

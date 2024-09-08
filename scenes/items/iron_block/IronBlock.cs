@@ -14,7 +14,14 @@ public partial class IronBlock : RigidBody2D
 
     private void OnBodyEntered(Node body)
     {
-        // todo 铁块音效
-        GD.Print($"铁块音效");
+        ImpactSFX.Play();
     }
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AudioStreamPlayer2D ImpactSFX { get; set; } = null!;
+
+    #endregion
 }
