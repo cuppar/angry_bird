@@ -110,18 +110,18 @@ rotation = 3.14159
 [node name="Glasses" type="Node2D" parent="Items"]
 
 [node name="Glass" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1253, 196)
+position = Vector2(774, 332)
 
 [node name="Glass2" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1254, 118)
+position = Vector2(775, 254)
 
 [node name="Glass3" parent="Items/Glasses" instance=ExtResource("10_8hw4h")]
-position = Vector2(1254, 40)
+position = Vector2(775, 176)
 
 [node name="Bomb" type="Node2D" parent="Items"]
 
 [node name="Bomb" parent="Items/Bomb" instance=ExtResource("12_lkdxw")]
-position = Vector2(768, 327)
+position = Vector2(1833, 527)
 
 [node name="ScoreItems" type="Node2D" parent="Items"]
 

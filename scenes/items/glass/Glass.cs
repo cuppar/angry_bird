@@ -42,12 +42,12 @@ public partial class Glass : Node2D
         var breakPos = RigidBody.GlobalPosition;
         RigidBody.QueueFree();
         _glassFragmentPackedScene ??= (PackedScene)ResourceLoader.LoadThreadedGet(PrefabPaths.Character.GlassFragment);
-        // todo 玻璃音效
-        GD.Print($"玻璃音效");
+        BreakSFX.Play();
+        
         for (var i = 0; i < FragmentCount; i++)
         {
             var glassFragment = _glassFragmentPackedScene.Instantiate<GlassFragment>();
-            var minAngle = (float)Math.PI * 2 / FragmentCount;
+            const float minAngle = (float)Math.PI * 2 / FragmentCount;
             glassFragment.Direction = Vector2.Right.Rotated(i * minAngle);
             CallDeferred(Node.MethodName.AddChild, glassFragment);
             var pos = breakPos + glassFragment.Direction *
@@ -55,4 +55,12 @@ public partial class Glass : Node2D
             glassFragment.SetDeferred(Node2D.PropertyName.GlobalPosition, pos);
         }
     }
+
+    #region Child
+
+    [ExportGroup("ChildDontChange")]
+    [Export]
+    public AudioStreamPlayer2D BreakSFX { get; set; } = null!;
+
+    #endregion
 }
