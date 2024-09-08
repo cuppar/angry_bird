@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using AngryBird.Constants;
 using AngryBird.Globals;
+using AngryBird.Globals.Extensions;
 using Godot;
 
 namespace AngryBird;
@@ -51,21 +52,14 @@ public partial class ScoreItem : Node2D, ISerializationListener
         CleanUpAsync();
     }
 
+
     private async void CleanUpAsync()
     {
-        await Task.WhenAll(AnimationCompleteAsync(), SFXCompleteAsync());
+        var sfxTask = ToSignal(DieSFX, AudioStreamPlayer2D.SignalName.Finished);
+        var animationTask = ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
+
+        await SignalExtensions.WhenAll(animationTask, sfxTask);
         QueueFree();
-        return;
-
-        async Task SFXCompleteAsync()
-        {
-            await ToSignal(DieSFX, AudioStreamPlayer2D.SignalName.Finished);
-        }
-
-        async Task AnimationCompleteAsync()
-        {
-            await ToSignal(AnimationPlayer, AnimationMixer.SignalName.AnimationFinished);
-        }
     }
 
 

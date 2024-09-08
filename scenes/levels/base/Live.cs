@@ -1,4 +1,4 @@
-using AngryBird.Globals;
+using AngryBird.Globals.Extensions;
 using Godot;
 
 namespace AngryBird;

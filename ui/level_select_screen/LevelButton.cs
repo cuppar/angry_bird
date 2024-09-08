@@ -2,6 +2,7 @@ using AngryBird.Autoloads;
 using AngryBird.Classes;
 using AngryBird.Constants;
 using AngryBird.Globals;
+using AngryBird.Globals.Extensions;
 using Godot;
 
 namespace AngryBird.UI;

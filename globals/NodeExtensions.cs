@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using AngryBird.Constants;
 using Godot;
 
-namespace AngryBird.Globals;
+namespace AngryBird.Globals.Extensions;
 
-public static class Extensions
+public static class NodeExtensions
 {
     public static async Task EnsureReadyAsync(this Node node)
     {
@@ -30,5 +31,21 @@ public static class Extensions
             await toolReadyTCS.Task;
         else
             await node.EnsureReadyAsync();
+    }
+}
+
+public static class SignalExtensions
+{
+    public static async Task WhenAll(params SignalAwaiter[] awaiterArray)
+    {
+        var tasks = from awaiter in awaiterArray
+            select awaiter.ToTask();
+
+        await Task.WhenAll(tasks);
+    }
+
+    public static async Task ToTask(this SignalAwaiter awaiter)
+    {
+        await awaiter;
     }
 }
