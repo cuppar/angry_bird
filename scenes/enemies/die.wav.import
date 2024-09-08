@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cdr1u22jaw6w6"
-path="res://.godot/imported/Retro Blop 07.wav-71adce474f1bb9e19d82b128cbe17f36.sample"
+path="res://.godot/imported/die.wav-1f64ff1a3fbd72ca31aa08701068c8fa.sample"
 
 [deps]
 
-source_file="res://scenes/enemies/Retro Blop 07.wav"
-dest_files=["res://.godot/imported/Retro Blop 07.wav-71adce474f1bb9e19d82b128cbe17f36.sample"]
+source_file="res://scenes/enemies/die.wav"
+dest_files=["res://.godot/imported/die.wav-1f64ff1a3fbd72ca31aa08701068c8fa.sample"]
 
 [params]
 

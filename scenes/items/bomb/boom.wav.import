@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dpwlurfxy3ugl"
-path="res://.godot/imported/You Win.wav-54edd1f65aa46d1dc91e89b9e5a1592f.sample"
+uid="uid://ed4vqvlc0000"
+path="res://.godot/imported/boom.wav-f480fd461f07e7a33871564a9bfb7845.sample"
 
 [deps]
 
-source_file="res://ui/game_pass_screen/You Win.wav"
-dest_files=["res://.godot/imported/You Win.wav-54edd1f65aa46d1dc91e89b9e5a1592f.sample"]
+source_file="res://scenes/items/bomb/boom.wav"
+dest_files=["res://.godot/imported/boom.wav-f480fd461f07e7a33871564a9bfb7845.sample"]
 
 [params]
 

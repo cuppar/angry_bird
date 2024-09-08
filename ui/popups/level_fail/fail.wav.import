@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dwjpro84w4uau"
-path="res://.godot/imported/Retro Charge Off 11.wav-38091309219fb3140cfcbd7db37bddf6.sample"
+path="res://.godot/imported/fail.wav-c4de197241ff3bb8a131cabeb4ed3fb1.sample"
 
 [deps]
 
-source_file="res://ui/popups/level_fail/Retro Charge Off 11.wav"
-dest_files=["res://.godot/imported/Retro Charge Off 11.wav-38091309219fb3140cfcbd7db37bddf6.sample"]
+source_file="res://ui/popups/level_fail/fail.wav"
+dest_files=["res://.godot/imported/fail.wav-c4de197241ff3bb8a131cabeb4ed3fb1.sample"]
 
 [params]
 
