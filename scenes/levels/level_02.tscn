@@ -3,4 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_1ksvi"]
 
 [node name="Level" instance=ExtResource("1_1ksvi")]
-LiveLeft = 3

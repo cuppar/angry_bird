@@ -20,7 +20,6 @@ public partial class Bird : RigidBody2D
     {
         if (body is not TileMapLayer tileMapLayer) return;
         var coords = tileMapLayer.GetCoordsForBodyRid(bodyRid);
-        GD.Print($"coords: {coords}");
         var data = tileMapLayer.GetCellTileData(coords);
         if (data is null) return;
         var isPlatform = (bool)data.GetCustomData("IsPlatform");

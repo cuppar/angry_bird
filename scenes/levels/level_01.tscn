@@ -1,20 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk86tujexm2go"]
+[gd_scene load_steps=3 format=4 uid="uid://bk86tujexm2go"]
 
 [ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_q04y8"]
+[ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="2_kere4"]
 
 [node name="Level" instance=ExtResource("1_q04y8")]
 
-[node name="Glass6" parent="Items/Glasses" index="3"]
-position = Vector2(1328, 597)
+[node name="TileMapLayer" parent="Items/Platform" index="0"]
+tile_map_data = PackedByteArray("AAAIAAgAAAAHAAEAAAAJAAgAAAACAAAAAAAKAAgAAAAIAAEAAAAOAAgAAAAHAAEAAAAPAAgAAAACAAAAAAAQAAgAAAAIAAEAAAALAAQAAAAHAAEAAAAMAAQAAAACAAAAAAANAAQAAAAIAAEAAAA=")
 
-[node name="Bomb" parent="Items/Bomb" index="0"]
-position = Vector2(799, 597)
+[node name="Pig" parent="Items/Pigs" index="0" instance=ExtResource("2_kere4")]
+position = Vector2(608, 472)
 
-[node name="ScoreItem9" parent="Items/ScoreItems" index="6"]
-position = Vector2(1216, 311)
+[node name="Pig2" parent="Items/Pigs" index="1" instance=ExtResource("2_kere4")]
+position = Vector2(800, 216)
 
-[node name="Pig" parent="Items/Pigs" index="0"]
-position = Vector2(1205, 528)
-
-[node name="Pig2" parent="Items/Pigs" index="4"]
-position = Vector2(1124, 608)
+[node name="Pig3" parent="Items/Pigs" index="2" instance=ExtResource("2_kere4")]
+position = Vector2(992, 472)
