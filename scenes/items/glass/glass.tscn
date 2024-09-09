@@ -14,7 +14,7 @@ BreakSFX = NodePath("SFX/Break")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 7
-mass = 0.04
+mass = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_3d2l3")

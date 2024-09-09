@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhpmqn0amq6f"]
+
+[ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_pcm1i"]
+[ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="2_bitxq"]
+[ext_resource type="PackedScene" uid="uid://dxkkb484m5v1n" path="res://scenes/items/board/board.tscn" id="3_gt54p"]
+[ext_resource type="PackedScene" uid="uid://cs2ved2fwim8e" path="res://scenes/items/glass/glass.tscn" id="4_xopbq"]
+[ext_resource type="PackedScene" uid="uid://bq5xd2vwun3t5" path="res://scenes/items/bomb/bomb.tscn" id="5_7ibjj"]
+[ext_resource type="PackedScene" uid="uid://dwjpuuh28oflq" path="res://scenes/items/score_item/score_item.tscn" id="5_bb4qd"]
+[ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="6_k1o7g"]
+
+[node name="Level" instance=ExtResource("1_pcm1i")]
+LiveLeft = 4
+
+[node name="IronBlock" parent="Items/IronBlocks" index="0" instance=ExtResource("2_bitxq")]
+position = Vector2(618, 630)
+
+[node name="IronBlock2" parent="Items/IronBlocks" index="1" instance=ExtResource("2_bitxq")]
+position = Vector2(618, 590)
+
+[node name="IronBlock3" parent="Items/IronBlocks" index="2" instance=ExtResource("2_bitxq")]
+position = Vector2(618, 550)
+
+[node name="IronBlock4" parent="Items/IronBlocks" index="3" instance=ExtResource("2_bitxq")]
+position = Vector2(618, 510)
+
+[node name="IronBlock9" parent="Items/IronBlocks" index="4" instance=ExtResource("2_bitxq")]
+position = Vector2(1026, 630)
+
+[node name="IronBlock10" parent="Items/IronBlocks" index="5" instance=ExtResource("2_bitxq")]
+position = Vector2(1026, 590)
+
+[node name="Board" parent="Items/Boards" index="0" instance=ExtResource("3_gt54p")]
+position = Vector2(392, 584)
+rotation = 1.57079
+
+[node name="Board4" parent="Items/Boards" index="1" instance=ExtResource("3_gt54p")]
+position = Vector2(392, 408)
+rotation = 1.57079
+
+[node name="Board2" parent="Items/Boards" index="2" instance=ExtResource("3_gt54p")]
+position = Vector2(528, 584)
+rotation = 1.57079
+
+[node name="Board5" parent="Items/Boards" index="3" instance=ExtResource("3_gt54p")]
+position = Vector2(528, 408)
+rotation = 1.57079
+
+[node name="Board6" parent="Items/Boards" index="4" instance=ExtResource("3_gt54p")]
+position = Vector2(464, 320)
+rotation = 3.14159
+
+[node name="Board3" parent="Items/Boards" index="5" instance=ExtResource("3_gt54p")]
+position = Vector2(464, 496)
+rotation = 3.14159
+
+[node name="Board7" parent="Items/Boards" index="6" instance=ExtResource("3_gt54p")]
+position = Vector2(1200, 584)
+rotation = 1.57079
+
+[node name="Board8" parent="Items/Boards" index="7" instance=ExtResource("3_gt54p")]
+position = Vector2(1200, 408)
+rotation = 1.57079
+
+[node name="Board9" parent="Items/Boards" index="8" instance=ExtResource("3_gt54p")]
+position = Vector2(1336, 584)
+rotation = 1.57079
+
+[node name="Board10" parent="Items/Boards" index="9" instance=ExtResource("3_gt54p")]
+position = Vector2(1336, 408)
+rotation = 1.57079
+
+[node name="Board11" parent="Items/Boards" index="10" instance=ExtResource("3_gt54p")]
+position = Vector2(1272, 320)
+rotation = 3.14159
+
+[node name="Board13" parent="Items/Boards" index="11" instance=ExtResource("3_gt54p")]
+position = Vector2(715, 584)
+rotation = 1.57079
+
+[node name="Board14" parent="Items/Boards" index="12" instance=ExtResource("3_gt54p")]
+position = Vector2(851, 584)
+rotation = 1.57079
+
+[node name="Board15" parent="Items/Boards" index="13" instance=ExtResource("3_gt54p")]
+position = Vector2(787, 496)
+rotation = 3.14159
+
+[node name="Board12" parent="Items/Boards" index="14" instance=ExtResource("3_gt54p")]
+position = Vector2(1272, 496)
+rotation = 3.14159
+
+[node name="Glass" parent="Items/Glasses" index="0" instance=ExtResource("4_xopbq")]
+position = Vector2(619, 451)
+
+[node name="Glass2" parent="Items/Glasses" index="1" instance=ExtResource("4_xopbq")]
+position = Vector2(619, 371)
+
+[node name="Glass5" parent="Items/Glasses" index="2" instance=ExtResource("4_xopbq")]
+position = Vector2(947, 611)
+
+[node name="Glass6" parent="Items/Glasses" index="3" instance=ExtResource("4_xopbq")]
+position = Vector2(947, 531)
+
+[node name="Glass7" parent="Items/Glasses" index="4" instance=ExtResource("4_xopbq")]
+position = Vector2(1107, 611)
+
+[node name="Glass8" parent="Items/Glasses" index="5" instance=ExtResource("4_xopbq")]
+position = Vector2(1107, 531)
+
+[node name="Glass9" parent="Items/Glasses" index="6" instance=ExtResource("4_xopbq")]
+position = Vector2(979, 451)
+
+[node name="Glass10" parent="Items/Glasses" index="7" instance=ExtResource("4_xopbq")]
+position = Vector2(1059, 451)
+
+[node name="Bomb" parent="Items/Bomb" index="0" instance=ExtResource("5_7ibjj")]
+position = Vector2(784, 600)
+
+[node name="ScoreItem" parent="Items/ScoreItems" index="0" instance=ExtResource("5_bb4qd")]
+position = Vector2(789, 176)
+
+[node name="ScoreItem2" parent="Items/ScoreItems" index="1" instance=ExtResource("5_bb4qd")]
+position = Vector2(701, 176)
+
+[node name="ScoreItem3" parent="Items/ScoreItems" index="2" instance=ExtResource("5_bb4qd")]
+position = Vector2(965, 176)
+
+[node name="ScoreItem4" parent="Items/ScoreItems" index="3" instance=ExtResource("5_bb4qd")]
+position = Vector2(877, 176)
+
+[node name="Pig" parent="Items/Pigs" index="0" instance=ExtResource("6_k1o7g")]
+position = Vector2(460, 614)
+
+[node name="Pig4" parent="Items/Pigs" index="1" instance=ExtResource("6_k1o7g")]
+position = Vector2(460, 438)
+
+[node name="Pig5" parent="Items/Pigs" index="2" instance=ExtResource("6_k1o7g")]
+position = Vector2(1268, 614)
+
+[node name="Pig6" parent="Items/Pigs" index="3" instance=ExtResource("6_k1o7g")]
+position = Vector2(1268, 438)
+
+[node name="Pig2" parent="Items/Pigs" index="4" instance=ExtResource("6_k1o7g")]
+position = Vector2(1026, 534)

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="2_kere4"]
 
 [node name="Level" instance=ExtResource("1_q04y8")]
+LiveLeft = 3
 
 [node name="TileMapLayer" parent="Items/Platform" index="0"]
 tile_map_data = PackedByteArray("AAAIAAgAAAAHAAEAAAAJAAgAAAACAAAAAAAKAAgAAAAIAAEAAAAOAAgAAAAHAAEAAAAPAAgAAAACAAAAAAAQAAgAAAAIAAEAAAALAAQAAAAHAAEAAAAMAAQAAAACAAAAAAANAAQAAAAIAAEAAAA=")

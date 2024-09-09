@@ -1,5 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://d15p7cte1342f"]
+[gd_scene load_steps=4 format=3 uid="uid://d15p7cte1342f"]
 
 [ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_1ksvi"]
+[ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="2_b05eu"]
+[ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="3_psg0p"]
 
 [node name="Level" instance=ExtResource("1_1ksvi")]
+LiveLeft = 3
+
+[node name="IronBlock" parent="Items/IronBlocks" index="0" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 629)
+
+[node name="IronBlock2" parent="Items/IronBlocks" index="1" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 589)
+
+[node name="IronBlock3" parent="Items/IronBlocks" index="2" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 549)
+
+[node name="IronBlock4" parent="Items/IronBlocks" index="3" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 509)
+
+[node name="IronBlock5" parent="Items/IronBlocks" index="4" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 469)
+
+[node name="IronBlock6" parent="Items/IronBlocks" index="5" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 429)
+
+[node name="IronBlock7" parent="Items/IronBlocks" index="6" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 389)
+
+[node name="IronBlock8" parent="Items/IronBlocks" index="7" instance=ExtResource("2_b05eu")]
+position = Vector2(552, 349)
+
+[node name="Pig" parent="Items/Pigs" index="0" instance=ExtResource("3_psg0p")]
+position = Vector2(552, 294)
+
+[node name="Pig2" parent="Items/Pigs" index="1" instance=ExtResource("3_psg0p")]
+position = Vector2(768, 608)

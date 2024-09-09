@@ -19,7 +19,7 @@ public static class Game
 
     public static Mode CurrentMode { get; set; } = Mode.Easy;
     public static int CurrentLevelNumber { get; set; } = -1;
-    public static int LevelTotal => 2;
+    public static int LevelTotal => 5;
     public static Level CurrentLevel { get; set; } = null!;
     public static event Action<float>? ShakeCameraEvent;
 

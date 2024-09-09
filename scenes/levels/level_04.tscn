@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://nknphurpd62h"]
+
+[ext_resource type="PackedScene" uid="uid://dweh1f0cgi0l1" path="res://scenes/levels/base/level.tscn" id="1_0v7gj"]
+[ext_resource type="PackedScene" uid="uid://r51f16fo32cq" path="res://scenes/items/iron_block/iron_block.tscn" id="2_rmqtg"]
+[ext_resource type="PackedScene" uid="uid://dxkkb484m5v1n" path="res://scenes/items/board/board.tscn" id="3_87mu2"]
+[ext_resource type="PackedScene" uid="uid://cs2ved2fwim8e" path="res://scenes/items/glass/glass.tscn" id="3_h2tgi"]
+[ext_resource type="PackedScene" uid="uid://dwjpuuh28oflq" path="res://scenes/items/score_item/score_item.tscn" id="4_nomd8"]
+[ext_resource type="PackedScene" uid="uid://bsmmtr18i510o" path="res://scenes/enemies/pig.tscn" id="5_qp61g"]
+
+[node name="Level" instance=ExtResource("1_0v7gj")]
+LiveLeft = 3
+
+[node name="TileMapLayer" parent="Items/Platform" index="0"]
+tile_map_data = PackedByteArray(0, 0, 17, 0, 2, 0, 0, 0, 7, 0, 1, 0, 0, 0, 18, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 19, 0, 2, 0, 0, 0, 8, 0, 1, 0, 0, 0)
+
+[node name="IronBlock" parent="Items/IronBlocks" index="0" instance=ExtResource("2_rmqtg")]
+position = Vector2(618, 630)
+
+[node name="IronBlock2" parent="Items/IronBlocks" index="1" instance=ExtResource("2_rmqtg")]
+position = Vector2(618, 590)
+
+[node name="IronBlock3" parent="Items/IronBlocks" index="2" instance=ExtResource("2_rmqtg")]
+position = Vector2(618, 550)
+
+[node name="IronBlock4" parent="Items/IronBlocks" index="3" instance=ExtResource("2_rmqtg")]
+position = Vector2(618, 510)
+
+[node name="IronBlock9" parent="Items/IronBlocks" index="4" instance=ExtResource("2_rmqtg")]
+position = Vector2(1026, 630)
+
+[node name="IronBlock10" parent="Items/IronBlocks" index="5" instance=ExtResource("2_rmqtg")]
+position = Vector2(1026, 590)
+
+[node name="Board" parent="Items/Boards" index="0" instance=ExtResource("3_87mu2")]
+position = Vector2(720, 584)
+rotation = 1.57079
+
+[node name="Board4" parent="Items/Boards" index="1" instance=ExtResource("3_87mu2")]
+position = Vector2(720, 408)
+rotation = 1.57079
+
+[node name="Board2" parent="Items/Boards" index="2" instance=ExtResource("3_87mu2")]
+position = Vector2(856, 584)
+rotation = 1.57079
+
+[node name="Board5" parent="Items/Boards" index="3" instance=ExtResource("3_87mu2")]
+position = Vector2(856, 408)
+rotation = 1.57079
+
+[node name="Board6" parent="Items/Boards" index="4" instance=ExtResource("3_87mu2")]
+position = Vector2(792, 320)
+rotation = 3.14159
+
+[node name="Board3" parent="Items/Boards" index="5" instance=ExtResource("3_87mu2")]
+position = Vector2(792, 496)
+rotation = 3.14159
+
+[node name="Glass" parent="Items/Glasses" index="0" instance=ExtResource("3_h2tgi")]
+position = Vector2(619, 451)
+
+[node name="Glass2" parent="Items/Glasses" index="1" instance=ExtResource("3_h2tgi")]
+position = Vector2(619, 371)
+
+[node name="Glass5" parent="Items/Glasses" index="2" instance=ExtResource("3_h2tgi")]
+position = Vector2(947, 611)
+
+[node name="Glass6" parent="Items/Glasses" index="3" instance=ExtResource("3_h2tgi")]
+position = Vector2(947, 531)
+
+[node name="Glass7" parent="Items/Glasses" index="4" instance=ExtResource("3_h2tgi")]
+position = Vector2(1107, 611)
+
+[node name="Glass8" parent="Items/Glasses" index="5" instance=ExtResource("3_h2tgi")]
+position = Vector2(1107, 531)
+
+[node name="Glass9" parent="Items/Glasses" index="6" instance=ExtResource("3_h2tgi")]
+position = Vector2(979, 451)
+
+[node name="Glass10" parent="Items/Glasses" index="7" instance=ExtResource("3_h2tgi")]
+position = Vector2(1059, 451)
+
+[node name="ScoreItem" parent="Items/ScoreItems" index="0" instance=ExtResource("4_nomd8")]
+position = Vector2(789, 176)
+
+[node name="ScoreItem2" parent="Items/ScoreItems" index="1" instance=ExtResource("4_nomd8")]
+position = Vector2(701, 176)
+
+[node name="ScoreItem3" parent="Items/ScoreItems" index="2" instance=ExtResource("4_nomd8")]
+position = Vector2(965, 176)
+
+[node name="ScoreItem4" parent="Items/ScoreItems" index="3" instance=ExtResource("4_nomd8")]
+position = Vector2(877, 176)
+
+[node name="Pig" parent="Items/Pigs" index="0" instance=ExtResource("5_qp61g")]
+position = Vector2(788, 614)
+
+[node name="Pig4" parent="Items/Pigs" index="1" instance=ExtResource("5_qp61g")]
+position = Vector2(788, 438)
+
+[node name="Pig2" parent="Items/Pigs" index="2" instance=ExtResource("5_qp61g")]
+position = Vector2(1026, 534)
+
+[node name="Pig3" parent="Items/Pigs" index="3" instance=ExtResource("5_qp61g")]
+position = Vector2(1186, 91)

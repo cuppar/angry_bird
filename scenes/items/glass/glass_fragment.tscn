@@ -11,10 +11,9 @@ rough = true
 
 [node name="GlassFragment" type="RigidBody2D"]
 collision_mask = 7
-mass = 0.01
+mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_belre")
 script = ExtResource("1_asy5s")
-MaxForce = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k70be")
